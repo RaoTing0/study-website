@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="build/react.js"></script>
+        <script src="build/react-dom.js"></script>
+        <script src="build/browser.min.js"></script>
+    </head>
+    <body>
+    	<div id="example"></div>
+    	<script type="text/babel">
+
+    		var RefPrc = React.createClass({
+    			callback: function () {
+    				this.refs.inp.focus();
+    			},
+    			render: function () {
+    				return (<div>
+    						<input type='text' ref='inp'/>
+    						<input type='button' value='点击' onClick={ this.callback}/>
+    					</div>);
+    			}
+    		});
+
+    		ReactDOM.render(
+    			<RefPrc/>,
+    			document.getElementById('example')
+    		);
+    	</script>	
+    	
+    </body>
+</html>

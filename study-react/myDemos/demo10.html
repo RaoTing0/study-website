@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .test {
+                font-size: 44px;
+                color: red;
+            }
+        </style>
+        <script src="build/react.js"></script>
+        <script src="build/react-dom.js"></script>
+        <script src="build/browser.min.js"></script>
+    </head>
+    <body>
+    	<div id="example"></div>
+    	<script type="text/babel">
+    		//隐藏显示
+            
+            var Display = React.createClass({
+                //点击事件的处理函数
+                handler: function (event) {
+                    // 阻止冒泡和事件的默认行为
+                    event.stopPropagation();
+                    event.preventDefault();
+                    var ele = this.refs.test;
+
+                    if( ele.style.display == 'none') {
+                        ele.style.display = 'inline';
+                    } else {
+                        ele.style.display = 'none';
+                    }
+                },
+                render: function () {
+                    return (
+                        <div>
+                            <input type="button" value="隐藏|显示" onClick={this.handler}/>
+                            <span ref="test">测试隐藏或者显示</span>
+                        </div>
+                    );
+                }
+            });
+
+            //获取输入框中的文字
+            var TextInput = React.createClass({
+                //给输入框中设置初始值
+                getInitialState: function () {
+                    return ({
+                        value: ""
+                    });
+                },
+                handler: function (event) {
+                    event.stopPropagation();
+                    event.preventDefault();
+
+                    //设置state里的value变量值
+                    this.setState({
+                        value: event.target.value
+                    });
+                },
+                render: function () {
+                    return (
+                        <div>
+                            <input type="text" value={this.state.value} onChange={this.handler}/>
+                            <p className='test'>{this.state.value}</p>
+                        </div>
+                    );
+                }
+            });
+
+            ReactDOM.render(
+                <div>
+                    <Display/>
+                    <TextInput/>
+                </div>,
+                document.getElementById('example')
+            );
+    	</script>	
+    	
+    </body>
+</html>

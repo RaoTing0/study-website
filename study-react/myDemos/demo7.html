@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="build/react.js"></script>
+        <script src="build/react-dom.js"></script>
+        <script src="build/browser.min.js"></script>
+    </head>
+    <body>
+    	<div id="example"></div>
+    	<script type="text/babel">
+
+    		var StatePtc = React.createClass({
+    			getInitialState: function () {
+    				return ({ liked: false});
+    			},
+    			reset: function () {
+    				this.setState({liked: !this.state.liked});
+    			},
+    			render: function () {
+    				//定义一个变量，根据liked值得不同，显示不同的内容，再添加到组件中
+    				var text = this.state.liked ? '喜欢':'不喜欢';
+    				//将要输出的内容返回
+    				
+    				return (<h1 onClick={this.reset}>我{text}你</h1>);
+    				
+    			}
+    		});
+
+    		ReactDOM.render(
+    			<StatePtc/>,
+    			document.getElementById('example')
+    		);
+    	</script>	
+    	
+    </body>
+</html>

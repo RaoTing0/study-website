@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="build/react.js"></script>
+        <script src="build/react-dom.js"></script>
+        <script src="build/browser.min.js"></script>
+    </head>
+    <body>
+    	<div id="example"></div>
+    	<script type="text/babel">
+    		//组件生命周期
+    		//在组件加载以后调用的函数：componentDidMount()
+    		var Hello = React.createClass({
+    			//设置初始值
+    			getInitialState: function () {
+    				return ({
+    					opacity: 1.0
+    				});
+    			},
+    			componentDidMount: function () {
+    				var timer = setInterval(
+    					function () {
+    						var opacity = this.state.opacity;
+    						opacity -= 0.1;
+    						if( opacity<0 ) {
+    							opacity = 1.0;
+    						}
+    						this.setState({
+    							opacity: opacity
+    						});
+    					}.bind(this),100);
+    			},
+    			shouldComponentUpdate: function (state) {
+    				alert('更新数据了');
+    				return true;
+    			},
+    			render: function () {
+    				return (
+    					
+    					<div style={{opacity: this.state.opacity}}>
+    						<p>{this.state.opacity}</p>
+    					</div>
+    					
+    				);
+    			}
+    		});
+
+    		ReactDOM.render(
+    			<Hello name="透明度"/>,
+    			document.body);
+    	</script>	
+    	
+    </body>
+</html>

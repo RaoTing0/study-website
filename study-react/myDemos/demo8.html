@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="build/react.js"></script>
+        <script src="build/react-dom.js"></script>
+        <script src="build/browser.min.js"></script>
+    </head>
+    <body>
+    	<div id="example"></div>
+    	<script type="text/babel">
+    		// 读取表单中的值
+    		// 定义一个组件，组件中有：render方法(用来输出内容，渲染页面)点击表单的回调函数
+    		// 因为是要与用户互动的数据，所以要通过this.state来获取。
+    		var Input = React.createClass({
+    			// 给value设置初始值
+    			getInitialState: function () {
+    				return ({
+    					value: 'hello'
+    				});
+    			},
+    			//change事件的回调函数
+    			callback: function (event) {
+    				// 设置值
+    				this.setState({
+    					value: event.target.value
+    				});
+    			},
+    			render: function () {
+    				//获取与用户互动的value值
+    				var value = this.state.value;
+    				return (
+    					<div>
+    						<input type='text' value={value} onChange={this.callback}/>
+    						<p>{value}</p>
+    					</div>
+    					);
+    			}
+    		});
+
+    		ReactDOM.render(
+    			<Input/>,
+    			document.body
+    			);
+    	</script>	
+    	
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="build/react.js"></script>
+        <script src="build/react-dom.js"></script>
+        <script src="build/browser.min.js"></script>
+    </head>
+    <body>
+    	<div id="example"></div>
+    	<script type="text/babel">
+
+    		var Con = React.createClass({
+    			render: function () {
+    				return <h1>{this.props.name},我是组件里的<p>我是里面嵌套的</p><span>兄弟</span></h1>
+    			}
+    		});
+    		ReactDOM.render(
+    			<Con name='hi'/>,
+    			document.getElementById('example')
+    			);
+    	</script>	
+    	
+    </body>
+</html>
