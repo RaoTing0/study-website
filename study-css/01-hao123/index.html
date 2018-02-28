@@ -1,0 +1,3249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	/* 初始化 */
+            body{
+        		background-color: #F2F4F7;
+        	}
+            body,ul,li{
+                
+                padding: 0; 
+                margin: 0;          
+            }
+        	img,input{
+        		border: 0 none;
+        	}
+        	input{
+        		outline-style: none;
+        	}
+        	.fl{
+        		float: left;
+        	}
+        	.fr{
+				float: right;
+        	}
+        	/* 侧栏样式 */
+			.sidebar{
+				width: 50px;
+				height: 800px;
+				background-color: #E6E6E6;
+				position: fixed;
+				left: 0;
+				top: 0;
+			}
+			.sidebar ul{
+				list-style: none;
+				width: 50px;
+				height: 480px;
+				margin-top: 70px;
+				padding-left: 0;
+			}
+			.sidebar ul li{
+				height: 70px;
+				width: 50px;
+				margin-bottom: 10px;
+				font-size: 12px;
+				text-align: center;
+				color: #999999;
+
+			}
+			.sidebar ul li img{
+				margin-left: 6px;
+			}
+			.sidebar .jiantou{
+				font-size: 20px;
+				text-align: center;
+				font-weight: 700;
+				height: 50px;
+				width: 50px;
+				margin-top: 40px;
+				line-height: 50px;
+				color: #333;
+			}
+			.sidebar .jiantou:hover{
+				background-color: #eee;
+			}
+            .sidebar-right{
+                width: 70px;
+                height: 350px;
+                position:fixed;
+                right: 97px;
+                bottom: 0;
+            }
+            .sidebar-right .sidebar-right-con{
+                width: 60px;
+                margin-left: 10px;
+                margin-top: 5px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                font-size: 12px;
+                background-color: #fff;
+                border: 1px solid #DEE3EB;
+            }
+			/* 头部样式 */
+			.head{
+				height: 180px;
+                background: url("images/mao.png") no-repeat right top;
+                background-color: #fff;
+                border-bottom: 1px solid #D1D8E5;
+			}
+			.head .head-title{
+				height: 90px;
+				font-size: 12px;
+			}
+            .head img[src="images/hao123.png"]{
+                margin-top: 10px;
+                margin-left: 170px;
+            }
+            .head .head-title-1{
+                width: 70px;
+                height: 40px;
+                margin-top: 15px;
+                margin-left: 100px;
+                text-align: center;
+                padding-top: 10px;
+            }
+            .head .head-title-1:hover,.head .head-title-2:hover,.head .head-title-3:hover,.head .head-title-4:hover{
+                background-color: #E6E6E6;
+            }
+            .head .head-title-1 span{
+                color: #999;
+            }
+            .head .head-title-2{
+                height: 50px;
+                width: 240px;
+                margin-top: 15px;
+                margin-left: 40px;
+            }
+            .head .head-title-2 img{
+                margin-right: 10px;
+            }
+            .head .head-title-2 .head-title-w1,.head .head-title-2 .head-title-w2{
+                height: 40px;
+                width: 120px;
+                padding-top: 10px;
+            }
+            .head .head-title-3,.head .head-title-4,.head-title-5{
+                height: 40px;
+                padding-top: 10px;
+                width: 110px;
+                margin-left: 50px;
+                text-align: center;
+                margin-top: 15px;
+            }
+            .head .head-title-4{
+                width: 160px;
+                text-align: left;
+            }
+            .head-title-5{
+                text-align: left;
+                margin-left: 100px;
+            }
+            .head .head-title-4 input[type="text"]{
+                border: 1px solid #ccc;
+                width: 120px;
+            }
+            .head .father{
+                height: 20px;
+                width: 110px;
+                position: relative;
+            }
+            .head .son{
+                height: 70px;
+                width: 70px;
+                position: absolute;
+                display: none;
+            }
+            .father:hover .son{
+                display: block;
+            }
+            .head .head-sear{
+                height: 45px;
+                width: 950px;
+                margin: 0 auto;
+            }
+            .head .head-sear .head-search{
+                height: 45px;
+                width: 670px;
+                border: 1px solid #3385FF;
+                margin-left: 10px;
+                
+            }
+            /* 子盒子隐藏显示 */
+            .head-search-father{
+                height: 45px;
+                width: 620px;
+                position: relative;
+            }
+            .head-search-son{
+                height: 300px;
+                width: 500px;
+                position: absolute;
+                display: none;
+                background-color: #fff;
+                border: 1px solid #ccc;
+            }
+            .head-search-father:hover .head-search-son{
+                display: block;
+            }
+            .head-search-father .head-search-son ul{
+                 padding: 0;
+                margin: 0;
+            }
+            .head-search-father .head-search-son ul li{
+
+                list-style: none;
+                height: 30px;
+                line-height: 30px;
+                font-size: 14px;
+                color: #7DAFDD;
+                font-family: 宋体;
+            }
+             .head-search-father .head-search-son ul li:hover{
+                background-color: #ccc;
+             }
+            .head-search-father .head-search-son ul li span{
+                text-align: right;
+                padding-left: 350px;
+                color: #999;
+            }
+
+            .head .head-sear .head-search input[type="text"]{
+                height: 30px;
+                width: 500px;
+                margin-top: 8px;
+                line-height: 30px;
+                opacity: 0.8;
+                background: url("images/search.png") no-repeat 470px;
+            }
+            .head .head-sear .head-search input[type="button"]{
+                height: 45px;
+                width: 120px;
+                background-color: #3385ff;
+                font: 18px/45px microsoft yahei;
+                color: #fff;
+            }
+            .head .head-sear .head-search .wangye{
+                width: 50px;
+                height: 30px;
+                margin-top: 8px;
+                line-height: 30px;
+                font-size: 12px;
+                color: #999;
+                position: relative;
+            }
+            .wangye .wangye-son{
+                width: 50px;
+                height: 270px;
+                background-color: #fff;
+                border: 1px solid #000;
+                border-top: none;
+                position: absolute;
+                display: none;
+                margin-top: 5px;
+            }
+            .wangye:hover .wangye-son{
+                display: block;
+            }
+            .wangye .wangye-son ul{
+                margin: 0;
+                padding: 0;
+                margin-top: 7px;
+            }
+            .wangye .wangye-son ul li{
+                list-style: none;
+                width: 50px;
+                height: 30px;
+                font: 13px/30px 宋体;
+                color: #999 ;
+                text-align: center;
+            }
+            .wangye .wangye-son ul li:hover{
+                background-color: #eee;
+            }
+            .head-sear ul{
+                margin-left: 50px;
+            }
+            .head-sear ul li{
+                list-style: square;
+                height: 45px;
+                line-height: 45px;
+            }
+            .head-sear ul li a{
+                color: #000;
+                font-size: 12px;
+                text-decoration: none;
+            }
+            .head-sear ul li a:hover{
+                text-decoration: underline;
+            }
+            .head .head-new{
+                height: 45px;
+                width: 600px;
+                margin: 0 auto;
+            }
+            .head .head-new ul li{
+                list-style: none;
+                float: left;
+                font-size: 12px;
+                line-height: 45px;
+                padding: 0 5px;
+            }
+            /* 导航栏部分 */
+            .nav{
+                width: 1200px;
+                height: 65px;
+                margin: 10px auto;
+                border: 1px solid #D1D8E5;
+                background-color: #fff;
+            }
+            .nav a{
+                color: #000;
+                text-decoration: none;
+            }
+            .nav a:hover{
+                color: #0AA770;
+            }
+            .nav .b-nav{
+                width: 1200px;
+                height: 35px;
+                border-bottom: 1px solid #D1D8E5;
+            }
+            .nav .s-nav{
+                width: 1100px;
+                height: 30px;
+            }
+            .nav .b-nav ul li,.nav .s-nav ul li{
+                list-style: none;
+                float: left;
+            }
+            .nav .b-nav ul li{
+                font-size: 16px;
+                padding: 0 25px;
+                height: 35px;
+                line-height: 35px;
+            }
+            .nav .s-nav ul li{
+                padding: 0 15px;
+                height: 30px;
+                font: 100 14px/30px 宋体;
+            }
+            .b-nav .one{
+                display: inline-block;
+                height: 35px;
+                line-height: 35px;
+                border-top: 2px solid #0AA770;
+                color: #0AA770;
+            }
+            .s-nav .two{
+                color: #0AA770;
+            }
+            .s-nav a:hover{
+                color: #e00;
+                text-decoration: underline;
+            }
+            /* 广告部分 */
+            .ban{
+                width: 1200px;
+                height: 90px;
+                margin: 10px auto;
+            }
+            .ban img{
+                margin: 0 15px;
+            }
+            .ban img:hover{
+                opacity: 0.7;
+            }
+            /* 中间的大盒子 */
+            .Box{
+                width: 1200px;
+                height: 1910px;
+                margin: 10px auto;
+                margin-bottom: 0;
+                margin-top: 0;
+                font: 100 14px 宋体;
+            }
+            .Box-left{
+                width: 280px;
+                height: 1910px;
+                margin-right: 10px;
+             /*    border: 1px solid red; */
+            }
+            .Box-right{
+                width: 900px;
+                height: 1910px;
+                /* border: 1px solid red; */
+            }
+            /* 左边子盒子的样式 */
+            .Box-left .b-l-top{
+                height: 164px;
+                width: 280px;
+                background-color: #fff;
+                margin-bottom: 10px;
+                border: 1px solid #DEE3EB;
+            }
+            .Box-left .b-l-sub{
+                height: 1716px;
+                width: 280px;
+                background-color: #fff;
+                border: 1px solid #DEE3EB;
+            }
+            .Box-left .b-l-top-s{
+                width: 128px;
+                height: 28px;
+                line-height: 28px;
+                margin-left: 10px;
+                margin-top: 3px;
+            }
+            .Box-left .b-l-top-s img{
+                vertical-align: middle;
+            }
+            .Box-left .b-l-top-s a,.Box-right .b-r-box1-1-con a{
+                color: #000;
+                text-decoration: none;
+            }
+            .Box-left .b-l-top-s a:hover,.Box-right .b-r-box1-1-con a:hover{
+                color: #FF5500;
+                text-decoration: underline;
+            }
+            .b-l-sub-title{
+                height: 40px;
+                width: 280px;
+            }
+            .b-l-sub-title ul{
+                list-style: none;
+                height: 40px;
+                width: 280px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .b-l-sub-title ul li{
+                height: 15px;
+                padding: 0 12px;
+                float: left;
+                border-left: 1px solid #ccc;
+                margin-top: 12px;
+            }
+            .b-l-sub-title ul li.one{
+                border: none;
+                height: 40px;
+                margin-top: 0;
+                border-top: 1px solid #0AA770;
+                line-height: 40px;
+            }
+            .b-l-sub-title ul li a{
+                color: #000;
+                text-decoration: none;
+            }
+            .b-l-sub-title ul li.one a{
+                color: #0AA770;
+            }
+            .b-l-sub-news,.b-l-sub-news2,.b-l-sub-news3{
+                width: 280px;
+                height: 310px;
+            }
+            .b-l-sub-news ul,.b-l-sub-news2 ul,.b-l-sub-news3 ul{
+                list-style: none;
+                padding: 0;
+                margin: 10px auto;
+                height: 180px;
+                width:260px;
+
+            }
+            .b-l-sub-news ul li,.b-l-sub-news2 ul li,.b-l-sub-news3 ul li{
+                height: 30px;
+                line-height: 30px;
+            }
+            .b-l-sub-news ul li a{
+                color: #000;
+                text-decoration: none;
+            }
+            .b-l-sub-news ul li a:hover{
+                color: #f30;
+                text-decoration: underline;
+            }
+            .b-l-sub-news2{
+                overflow: auto;
+            }
+            .b-l-sub-news2 ul{
+                padding: 0;
+                margin: 0;
+                width: 250px;
+            }
+            .b-l-sub-news3-pic{
+                height: 110px;
+                width: 280px;
+            }
+            .b-l-sub-news3-pic a{
+                display: inline-block;
+                height: 15px;
+                width: 280px;
+                background: url("images/huochai.gif");
+                text-align: center;
+                padding-top:95px;
+            }
+            .b-l-sub-news3{
+                border-bottom: 1px solid #E9E9E9;
+            }
+            .b-l-sub-news3 .news3-li{
+                width: 110px;
+                padding-left: 20px;
+            }
+            .b-l-sub-news4{
+                width: 250px;
+                height: 180px;
+                margin: 10px auto;
+                border-bottom: 1px dotted #E9E9E9;
+            }
+            .b-l-sub-news4 .xingzuo{
+                width: 50px;
+                height: 40px;
+                margin: 5px;
+                font-size: 12px;
+                float:left;
+            }
+            .b-l-sub-news4 .xingzuo img{
+                margin-left: 15px;
+            }
+            .b-l-sub-news4 .b-l-sub-news4-li {
+                
+                height: 75px;
+                width: 75px;
+                margin-left: 5px;
+            }
+            .b-l-sub-news4 .b-l-sub-news4-li  li{
+                list-style: none;
+                height: 25px;
+                line-height: 25px;
+            }
+            .b-l-sub-news5{
+                width: 280px;
+                height: 150px;
+            }
+            .b-l-sub-news5 img{
+                margin: 0;
+                padding: 0;
+                margin-left: 10px;
+            }
+            .b-l-sub-news5-title {
+                padding-left: 10px;
+                height: 30px;
+                line-height: 30px;
+            }
+            .b-l-sub-news5-title a{
+                color: #000;
+                text-decoration: none;
+                font-weight: 700;
+            }
+            .b-l-sub-news5 ul{
+                height: 50px;
+                margin-left: 10px;
+            }
+            .b-l-sub-news5 li{
+                height: 25px;
+                list-style: none;
+                line-height: 25px;
+            }
+            .b-l-sub-news5-title a span{
+                color: #999;
+                font-size: 12px;
+            }
+            .b-l-sub-news5-title a:hover{
+                color: #f30;
+                text-decoration: underline;
+            }
+            /* 右边子盒子的样式 */
+            .Box-right .b-r-box1{
+                width: 900px;
+                height: 230px;
+                background-color: #fff;
+                border: 1px solid #AADDBB;
+            }
+            .b-r-box1-1{
+                width: 900px;
+                height: 97px;
+                border-bottom: 1px solid #F9F9F9;
+            }
+            .b-r-box1-2{
+                width: 900px;
+                height: 130px;
+            }
+            .Box-right .b-r-box1-1-con{
+                height: 30px;
+                width: 120px;
+                margin-left: 30px;
+                line-height: 30px;
+                margin-top: 2px;
+            }
+            .Box-right .b-r-box1-1-con img{
+                vertical-align: top;
+            }
+            .Box-right .b-r-min1{
+                width: 900px;
+                height: 32px;
+            }
+            .Box-right .b-r-min1 ul li{
+                list-style: none;
+                float: left;
+                height: 32px;
+                padding: 0 15px;
+                font: 12px/32px 宋体;  
+            }
+            .Box-right .b-r-min1 ul li a{
+                color: #3B5998;
+                text-decoration: none;
+            }
+            .Box-right .b-r-min1 ul li a:hover{
+                color: #FF5500;
+                text-decoration: none;
+            }
+            .Box-right .b-r-min1 ul li a.one:hover{
+                color: #0AA770;
+                text-decoration: underline;
+            }
+            .Box-right .b-r-min1 img{
+                margin-top: 5px;
+            }
+            .Box-right .b-r-box2{
+                width: 900px;
+                height: 180px;
+                border: 1px solid #DEE3EB;
+                background-color: #fff;
+            }
+            .Box-right .b-r-box2 .b-r-box2-left{
+                width: 20px;
+                height: 60px;
+                margin-top: 55px;
+                background-color: #0AA770;
+                color: #fff;
+                font-size: 12px;
+                text-align: center;
+            }
+            .Box-right .b-r-box2 .b-r-box2-con{
+                height: 160px;
+                width: 870px;
+                margin: 10px 0;
+                margin-left: 10px;
+
+            }
+            .Box-right .b-r-box2 .b-r-box2-con .b-r-box2-con-ul{
+                height: 32px;
+                width: 870px;
+            }
+            .Box-right .b-r-box2 .b-r-box2-con .b-r-box2-con-ul:hover{
+                background-color: #F7F7F7;
+            }
+            .Box-right .b-r-box2 .b-r-box2-con ul li{
+                list-style: none;
+                height: 32px;
+                width: 70px;
+                margin: 0 15px;
+                float: left;
+                line-height: 32px;
+            }
+            .Box-right .b-r-box2 .b-r-box2-con ul li.one{
+                width: 40px;
+               
+            }
+            .Box-right .b-r-box2 .b-r-box2-con ul li a{
+                color: #000;
+                text-decoration: none;
+            }
+            .Box-right .b-r-box2 .b-r-box2-con ul li.one a{
+                 color: #118850;
+            }
+            .Box-right .b-r-box2 .b-r-box2-con ul li a:hover{
+                color: #FF5500;
+                text-decoration: underline;
+            }
+            .Box-right .b-r-box2 .b-r-box2-con ul li.one a:hover{
+                color: #118850;
+            }
+            .b-r-min2{
+                height: 33px;
+                width: 900px;
+                background-color: #fff;
+                border: 1px solid #DEE3EB;
+                margin-top: 10px;
+            }
+            .b-r-min2 ul{
+                height: 33px;
+            }
+            .b-r-min2 ul li{
+                height: 16px;
+                list-style: none;
+                float: left;
+                padding: 0 20px;
+                line-height: 16px;
+                margin-top: 6px;
+                border-right: 1px solid #DEE3EB;
+            }
+            .b-r-min2 ul li.last{
+                border: none;
+            }
+            .b-r-min2 ul li a{
+                color: #118850;
+                text-decoration: none;
+            }
+            .b-r-min2 ul li a:hover{
+                text-decoration: underline;
+            }
+            .b-r-box3{
+                width: 900px;
+                height: 185px;
+                padding: 10px 0;
+                background-color: #fff;
+            }
+            .b-r-box3 .b-r-box3-con{
+                height: 32px;
+                width: 900px;
+            }
+            .b-r-box3 .b-r-box3-con .b-r-box3-con-left{
+                height: 32px;
+                width: 100px;
+                padding-left: 20px;
+            }
+            .b-r-box3 .b-r-box3-con .b-r-box3-con-left a{
+                color: #118850;
+                text-decoration: none;
+                line-height: 32px;
+                text-align: center;
+            }
+            .b-r-box3 .b-r-box3-con .b-r-box3-con-left a:hover{
+                text-decoration: underline;
+            }
+            .b-r-box3 .b-r-box3-con .b-r-box3-con-right{
+                height: 32px;
+                width: 70px;
+                line-height: 32px;
+                font-size: 12px;
+            }
+            .b-r-box3 .b-r-box3-con .b-r-box3-con-min{
+                height: 32px;
+                width: 700px;
+                text-align: center;
+            }
+            .b-r-box3 .b-r-box3-con .b-r-box3-con-min ul li{
+                padding: 0 15px;
+                height: 32px;
+                margin: 0;
+                line-height: 32px;
+                float: left;
+                list-style: none;
+            }
+            .b-r-box3 .b-r-box3-con .b-r-box3-con-min ul li img{
+                vertical-align: middle;
+            }
+            .b-r-box3 .b-r-box3-con .b-r-box3-con-min ul li a{
+                text-decoration: none;
+                color: #000;
+            }
+             .b-r-box3 .b-r-box3-con .b-r-box3-con-min ul li a:hover{
+                color: #FF5500;
+                text-decoration: underline;
+            }
+            img[src="images/dianshi.PNG"]{
+                vertical-align: middle;
+            }
+            .b-r-box3 .b-r-box3-con .ul2,.b-r-box3 .b-r-box3-con .ul3{
+                margin-left: 30px;
+            }
+            .b-r-min3{
+                height: 33px;
+                width:900px;
+                background-color: #F7F7F7;
+            }
+            .b-r-min3 ul {
+                list-style: none;
+                height: 33px;
+                width: 650px;
+                margin-left: 100px;
+            }
+            .b-r-min3 ul li{
+                float: left;
+                height: 33px;
+                margin: 0 5px;
+                line-height: 33px;
+            }
+            .b-r-min3 ul li a{
+                color: #118850;
+                text-decoration: none;
+            }
+            .b-r-min3 ul li a:hover{
+                text-decoration: underline;
+            }
+            .b-r-min3 ul li.hengxian{
+                color: #D5D5D5;
+            }
+            .b-r-new{
+                height: 180px;
+                width: 900px;
+                margin: 10px 0;
+                background-color: #fff;
+                border: 1px solid #DEE3EB;
+            }
+            .b-r-new-con{
+                width: 215px;
+                height: 160px;
+                margin: 10px 0;
+                border-right: 1px dashed #DEE3EB;
+            }
+            .b-r-new-con-pic{
+                height: 80px;
+                width: 190px;
+                margin: 0 auto;
+                position: relative;
+            }
+            .b-r-new-con-pic-sonl,.b-r-new-con-pic-son2{
+                height: 20px;
+                width: 20px;
+                background: #000;
+                color: #fff;
+                display: none;
+            }
+            .b-r-new-con-pic-sonl{
+                position: absolute;
+                left: 0;
+                top: 25px;
+            }
+            .b-r-new-con-pic-son2{
+                position: absolute;
+                right: 0;
+                top: 25px;
+            }
+            .b-r-new-con-pic:hover .b-r-new-con-pic-sonl,.b-r-new-con-pic:hover .b-r-new-con-pic-son2{
+                display: block;
+                opacity: 0.5;
+            }
+            .b-r-new img[src="images/left.PNG"],.b-r-new img[src="images/right.PNG"]{
+                margin-top: 80px;
+            }
+            .b-r-new-con ul{
+                list-style: none;
+                height: 80px;
+                width: 215px;
+                margin-left: 20px;
+            }
+            .b-r-new-con ul li{
+                height: 27px;
+                line-height: 27px;
+            }
+            .b-r-new-con ul li a{
+                color: #000;
+                text-decoration: none;
+            }
+            .b-r-new-con ul li a:hover{
+                color: #f30;
+                text-decoration: underline;
+            }
+            .b-r-last{
+                width: 900px;
+                height: 42px;
+                line-height: 42px;
+                border: 1px solid #DEE3EB;
+                background-color: #fff;
+            }
+            .b-r-last-con{
+                width: 205px;
+                padding-left: 20px;
+                float: left;
+            }
+            .b-r-last-con a{
+                color: #118850;
+                text-decoration: none;
+            }
+            .b-r-last-con a span{
+                color: #000;
+                margin: 20px;
+            }
+            .b-r-last-con a:hover{
+                color: #f30;
+                text-decoration: underline;
+            }
+            .b-r-last-con a:hover span{
+                color: #f30;
+            }
+            .shipin-title,.game-title,.life-title{
+                height: 38px;
+                width: 1190px;
+                margin: 0 auto;
+                background-color: #fff;
+                border: 1px solid #DEE3EB;
+                line-height: 38px;
+            }
+            .shipin-title ul li,.shipin-con-title ul li{
+                list-style: none;
+                float: left;
+                padding: 0 10px;
+                font-size: 13px;
+            }
+            .shipin-title ul li a,.shipin-con-title ul li a{
+                color: #000;
+                text-decoration: none;
+            }
+            .shipin-title ul li a:hover,.shipin-con-title ul li a:hover{
+                color: #F30;
+                text-decoration: underline;
+            }
+            .shipin-title-left,.shipin-con-title span,.game-title-left,.life-title-left{
+                height: 38px;
+                width: 100px;
+                text-align: center;
+                font-weight: 700;
+            }
+            .shipin-title-right{
+                width: 160px;
+                padding-right: 30px;
+                font: 13px/38px 宋体;
+                color: #666;
+            }
+            .shipin-con{
+                height: 420px;
+                width: 1190px;
+                border: 1px solid #DEE3EB;
+                border-top: none;
+                background-color: #fff;
+                margin: 0 auto;
+            }
+            .shipin-con-left{
+                width: 960px;
+                height: 420px;
+            }
+            img[src="images/left.PNG"],img[src="images/right.PNG"]{
+                margin-top: 150px;
+            }
+            .shipin-con-Bpic{
+                height: 210px;
+                width: 385px;
+                padding-top: 20px;
+                float: left;
+            }
+            .shipin-con-Spic{
+                height: 220px;
+                width: 570px;
+                padding-top: 10px;
+            }
+            .shipin-con-Spic a{
+                display: inline-block;
+                height: 20px;
+                width: 180px;
+                margin-right: 5px;
+                margin-top: 10px;
+                color: #fff;
+                background: url("images/nvzi.jpg") no-repeat;
+                padding-top: 80px;
+                font-size: 13px;
+            }
+            .shipin-con-Spic a:hover{
+                color: #F30;
+            }
+            .shipin-con-title{
+                height: 50px;
+                width: 960px;
+                line-height: 50px;
+            }
+            .shipin-con-last{
+                width: 178px;
+                height: 140px;
+                margin-right: 13px;
+            }
+            .shipin-con-last-pic{
+                height: 20px;
+                width: 178px;
+                background: url("images/dianshi.jpg");
+                padding-top: 80px;
+                font: 12px 宋体;
+                color: #fff;
+            }
+            .shipin-con-last a{
+                color: #000;
+                font-size: 13px;
+                text-decoration: none;
+            }
+            .shipin-con-right{
+                height: 420px;
+                width: 170px;
+            }
+            .shipin-con-right ul{
+                height: 420px;
+                width: 170px;
+                list-style: none;
+            }
+            .shipin-con-right ul li{
+                height: 35px;
+                font: 13px/35px 宋体;
+            }
+            .shipin-con-right ul li.one{
+                width: 165px;
+                height: 30px;
+                background: url("images/jiangjun1.jpg");
+                padding-top: 60px;
+            }
+            .squre,.squre3,.squre2,.squre1{
+                width: 20px;
+                height: 20px;
+                float: left;
+                margin-left: 10px;
+                margin-right: 10px;
+                background-color: #CACACA;
+                margin-top: 5px;
+                line-height: 20px;
+                text-align: center;
+                color: #fff;
+            }
+            .squre1{
+                background-color: #FF6149;
+            }
+            .squre2{
+                background-color: #FF920A;
+            }
+            .squre3{
+                background-color: #FFC602;
+            }
+            .game-title-right{
+                width: 180px;
+                padding-right: 30px;
+                font: 13px/38px 宋体;
+                color: #666;
+            }
+            .game-title{
+                margin-top: 10px;
+            }
+            .game-title ul{
+                float: left;
+                list-style: none;
+                height: 38px;
+            }
+            .game-title ul li{
+                float: left;
+                height: 38px;
+                line-height: 38px;
+                padding: 0 10px;
+                font-size: 13px;
+            }
+            .game-title ul li a{
+                color: #000;
+                font: 13px/38px 宋体; 
+                text-decoration: none;
+            }
+            .game-title ul li a:hover{
+                color: #0AA770;
+            }
+            .game-title ul li.one{
+                border-top: 2px solid #0AA770; 
+            }
+            .game-title ul li.one a{
+                color: #0AA770;
+            }
+            .game-con{
+                height: 290px;
+                width: 1190px;
+                border: 1px solid #DEE3EB;
+                border-top: none;
+                background-color: #fff;
+                margin: 0 auto;
+            }
+            .game-con a{
+                color: #000;
+                text-decoration: none;
+                font-size: 13px;
+                padding-left: 5px;
+            }
+            .game-con a:hover{
+                text-decoration: underline;
+                color: #F30;
+            }
+            .game-con-left{
+                height: 270px;
+                width: 260px;
+                padding: 10px;
+                float: left;
+            }
+            .game-con-left-pic1{
+                width: 256px;
+                height: 26px;
+                background: url("images/niao.jpg");
+                padding-top: 60px;
+                text-align:center;
+                color: #fff;
+                font-size: 12px;
+            }
+            .game-con-left-pic2{
+                height: 80px;
+                width: 70px;
+                margin-top: 10px;
+                float: left;
+            }
+            .game-con-left .te{
+                margin: 0 22px;
+                margin-top: 10px;
+            }
+            .game-con-right{
+                height: 270px;
+                width: 890px;
+                padding: 10px;
+            }
+            .game-con-right-left{
+                height: 270px;
+                width: 640px;
+            }
+            .game-con-right-left-pic{
+                height: 90px;
+                width: 70px;
+                float: left;
+                margin-right: 10px;
+            }
+            .game-con-right-right{
+                height: 270px;
+                width: 230px;
+                margin-left: 20px;
+            }
+            .game-con-right-right-pic{
+                width: 218px;
+                height: 25px;
+                background: url("images/tingche.gif") 20px;
+                color: #fff;
+                text-align: center;
+                padding-top: 75px;
+                font-size: 13px;
+            }
+            .game-con-right-right-pic:hover{
+                opacity:0.8;
+            }
+            .game-con-right-right ul{
+                margin-top: 10px;
+            }
+            .game-con-right-right ul li{
+                list-style: none;
+                height: 30px;
+                margin-top: 1px;
+                background-color: #ddd;
+                font-size: 13px;
+                font-family: 宋体;
+                line-height:30px;
+                padding-left: 10px;
+            }
+            .game-con-right-right ul li:hover{
+                color: #f30;
+                background-color: #eee;
+            }
+            .life-title{
+                margin-top: 10px;
+            }
+            .life-title-right a{
+                color: #666;
+                font: 13px/38px 宋体;
+                text-decoration: none;
+                margin-right:10px;
+            }
+            .life-con{
+                height: 290px;
+                width: 1190px;
+                background-color: #fff;
+                border: 1px solid #DEE3EB;
+                border-top: none;
+                margin: 0 auto;
+            }
+            .life-con-pic{
+                height: 250px;
+                width: 195px;
+                padding: 20px;
+            }
+            .life-con-pic-1,.life-con-pic-2,.life-con-pic-3,.life-con-pic-4{
+                height: 20px;
+                width: 195px;
+                background: url("images/wukong.jpg");
+                padding-top: 80px;
+                font: 14px 宋体;
+                color: #fff;
+                padding-left: 15px;
+            }
+            .life-con-pic-2{
+                background: url("images/mengna.jpg");
+            }
+            .life-con-pic-3{
+                background: url("images/qiba.gif");
+            }
+            .life-con-pic-4{
+                background: url("images/liaomei.gif");
+            }
+            .life-con-pic ul{
+               width: 210px;
+            }
+            .life-con-pic ul li{
+                list-style: none;
+                height: 30px;
+                font: 14px/30px 宋体;
+            }
+            .life-con-pic ul li a{
+                text-decoration: none;
+                color: #000;
+            }
+            .life-con-pic ul li a:hover{
+                text-decoration: underline;
+                color: #F30;
+            }
+            .relax-title{
+                height: 38px;
+                width: 1190px;
+                margin: 0 auto;
+                border: 1px solid #DEE3EB;
+                line-height: 38px;
+                background: url("images/qingsong.PNG") no-repeat 20px;
+                background-color: #fff;
+                margin-top: 10px;
+            }
+            .relax-title ul{
+                margin-left: 220px;
+            }
+            .relax-title ul li{
+                list-style:none;
+                float: left;
+                height: 38px;
+                margin: 0 10px;
+            }
+            .relax-title ul li a{
+                color: #000;
+                font-size: 13px;
+                text-decoration:none;
+            }
+            .relax-title ul li.one{
+                color: #0AA770;
+                border-top: 2px solid #0AA770;
+            }
+            .relax-con{
+                height: 290px;
+                width: 1190px;
+                margin: 0 auto;
+                border: 1px solid #DEE3EB;
+                border-top: none;
+                background-color: #fff;
+                position: relative;
+            }
+            .relax-con img[src="images/left.PNG"]{
+                position: absolute;
+                left: 0;
+                top: 10px;
+            }
+            .relax-con img[src="images/right.PNG"]{
+                position: absolute;
+                right: 0;
+                top: 20px;
+            }
+            .relax-con-pic{
+                height: 250px;
+                width: 1150px;
+                font: 14px/20px 宋体;
+                margin-left: 30px;
+                padding-top: 20px;
+            }
+            .relax-con-pic-1{
+                height: 130px;
+                width: 210px;
+                float: left;
+                margin-right: 20px;
+                text-align: center;
+            }
+            .relax-con-pic a{
+                color: #000;
+                text-decoration: none;
+            }
+            .relax-con-pic a:hover{
+                color: #f30;
+                text-decoration: underline;
+            }
+            .footer{
+                height: 320px;
+                background-color: #F7F7F8;
+                border-top: 1px solid #DEE3EB;
+                margin-top: 10px;
+            }
+            .footer-con{
+                height: 250px;
+                width: 1190px;
+                margin: 0 auto;
+            }
+            .footer-con-1{
+                height: 200px;
+                width: 296px;
+            }
+            .footer-con-1-t ul,.footer-con-2-t ul{
+                width: 270px;
+                height: 38px;
+                border-bottom: 1px solid #DEE3EB;
+            }
+            .footer-con-1-t ul li,.footer-con-2-t ul li{
+                font: 14px 宋体;
+                list-style: none;
+                float: left;
+                height: 38px;
+                line-height: 38px;
+                margin: 0 10px;
+            }
+            .footer-con-1-t ul li.one,.footer-con-2-t ul li.one{
+                color: #0AA770;
+                border-top: 1px solid #0AA770;
+            }
+            .footer-con-1-t ul li.shuxian,.footer-con-2-t ul li.shuxian{
+                color: #E9E9E9;
+            }
+            .footer-con-1-t-li{
+                height: 200px;
+                width: 296px;
+                border-right: 1px solid #DEE3EB;
+            }
+            .footer-con-1-t-li ul{
+                margin-top: 10px;
+                height: 200px;
+                width: 140px;
+                list-style: none;
+            }
+            .footer-con-1-t-li ul li{
+                height: 35px;
+                line-height: 35px;
+                font-size:14px;
+                font-family: 宋体;
+                padding-left: 20px;
+            }
+            .footer-con-1-t-li ul li a{
+                color: #000;
+                text-decoration: none;
+            }
+            .footer-con-1-t-li ul li a:hover{
+                color: #F30;
+                text-decoration: underline;
+            }
+            .footer-con-1-t-li ul li.li1{
+                background: url("images/office.jpg") no-repeat 5px 10px;
+            }
+            .footer-con-1-t-li ul li.li2{
+                background: url("images/tonghua.png") no-repeat 5px 10px;
+            }
+            .footer-con-1-t-li ul li.li3{
+                background: url("images/pptv.jpg") no-repeat 5px 10px;
+            }
+            .footer-con-1-t-li ul li.li4{
+                background: url("images/pdf.png") no-repeat 5px 10px;
+            }
+            .footer-con-1-t-li ul li.li5{
+                background: url("images/weixin.png") no-repeat 5px 10px;
+            }
+            .footer-con-1-t-li ul li.li6{
+                background: url("images/qitu.png") no-repeat 5px 10px;
+            }
+            .footer-con-1-t-li ul li.li7{
+                background: url("images/baidushouji9.png") no-repeat 5px 10px;
+            }
+            .footer-con-1-t-li ul li.li8{
+                background: url("images/yy.png") no-repeat 5px 10px;
+            }
+            .footer-con-1-t-li ul li.li9{
+                background: url("images/tianqi.png") no-repeat 5px 10px;
+            }
+            .footer-con-1-t-li ul li.li10{
+                background: url("images/aiqiyi.png") no-repeat 5px 10px;
+            }
+            .footer-con-2{
+                height: 200px;
+                width: 246px;
+                margin-left: 40px;
+            }
+            .footer-con-2-t ul{
+                width: 230px;
+            }
+            .footer-con-2-li{
+                width: 276px;
+                height:200px;
+                border-right: 1px solid #DEE3EB;
+            }
+            .footer-con-2-li ul{
+                width: 53px;
+                float: left;
+                margin-top: 10px;
+                margin-right: 15px;
+            }
+            .footer-con-2-li ul li{
+                list-style: none;
+                height: 30px;
+                font: 14px/30px 宋体;
+            }
+            .footer-con-2-li ul li a{
+                color: #000;
+                text-decoration: none;
+            }
+            .footer-con-2-li ul li a:hover{
+                color: #F30;
+                text-decoration: underline;
+            }
+            img[src="images/tehui.PNG"]{
+                margin-left: 30px;
+            }
+            .footer-bottom{
+                height: 70px;
+                width: 1190px;
+                margin: 0 auto;
+                border-top: 1px solid #DEE3EB;
+                line-height: 70px;
+            }
+            .footer-bottom a{
+                color: #666;
+                text-decoration: none;
+                margin-right: 10px;
+                font-size: 12px;
+            }
+            .footer-bottom a:hover{
+                color: #0AA770;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+    	<!-- 侧栏 -->
+    	<div class="sidebar">
+    		<ul>
+    			<li>
+    				<img src="images/li1.png" height="32" width="32" alt="">
+    				萌主页
+    			</li>
+    			<li>
+    				<img src="images/li2.png" height="32" width="32" alt="">
+    				动漫
+    			</li>
+    			<li>
+    				<img src="images/li3.png" height="32" width="32" alt="">
+    				游戏直播
+    			</li>
+    			<li>
+    				<img src="images/li4.png" height="32" width="32" alt="">
+    				新闻
+    			</li>
+    			<li>
+    				<img src="images/li5.png" height="32" width="32" alt="">
+    				搞笑
+    			</li>
+    			<li>
+    				<img src="images/li6.png" height="32" width="32" alt="">
+    				举报中心
+    			</li>
+    		</ul>
+    		<div class="jiantou">
+    			&lt;-
+    		</div>
+    	</div>
+        <!-- 右边的侧栏 -->
+        <div class="sidebar-right">
+            <img src="images/huawei.PNG" width="70" alt="">
+            <div class="sidebar-right-con">热播</div>
+            <div class="sidebar-right-con">游戏</div>
+            <div class="sidebar-right-con">生活</div>
+            <div class="sidebar-right-con">笑话</div>
+            <div class="sidebar-right-con">头条新闻</div>
+            <div class="sidebar-right-con">分类网址</div>
+        </div>
+    	<!-- 头部 -->
+    	<div class="head">
+    		<div class="head-title">
+    			<img src="images/hao123.png" height="45" title="天猫双11" class="fl">
+    			<div class="head-title-1 fl">
+                    汉中<span>&nbsp;&nbsp;切换</span><br>七日天气         
+                </div>
+    			<div class="head-title-2 fl">
+                    <div class="head-title-w1 fl">
+                        <img src="images/jin.PNG" height="40" alt="" class="fl">
+                        晴<br>18~20&deg;
+                    </div>
+                    <div class="head-title-w2 fr">
+                        <img src="images/ming.PNG" height="40" alt="" class="fl">
+                        晴<br>18~20&deg;
+                    </div>        
+                </div>
+    			<div class="head-title-3 fl">
+                    11月1日&nbsp;&nbsp;星期三<br>诸事不宜         
+                </div>
+    			<div class="head-title-4 fl">
+                    推荐:三亚租房过暖冬<br>邮箱: <input type="text">         
+                </div>
+    			<div class="head-title-5 fl">
+                    登录 | 网盘<br>
+                    <div class="father">
+                        手机扫码有好礼 
+                        <div class="son">
+                            <img src="images/erweima.png" height="70" width="70" alt="">
+                        </div>
+                    </div>        
+                </div>
+    		</div>
+    		<div class="head-sear">
+                <img src="images/baidu.png" height="40" title="百度一下" class="fl">
+                <div class="head-search fl">
+                    <div class="wangye fl">网页：
+                        <div class="wangye-son">
+                            <ul>
+                                <li>网页</li>
+                                <li>音乐</li>
+                                <li>视频</li>
+                                <li>图片</li>
+                                <li>贴吧</li>
+                                <li>知道</li>
+                                <li>新闻</li>
+                                <li>地图</li>
+                                <li>更多&lt;&lt;</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="head-search-father fr">
+                        <input type="text" placeholder="搜你想要的" class="fl"> 
+                        <input type="button" value="百度一下">
+                        <div class="head-search-son">
+                            <ul>
+                                <li>点外卖留言多点辣  <span>推荐</span></li>
+                                <li>点外卖留言多点辣  <span>推荐</span></li>
+                                <li>点外卖留言多点辣  <span>推荐</span></li>
+                                <li>点外卖留言多点辣  <span>推荐</span></li>
+                                <li>点外卖留言多点辣  <span>推荐</span></li>
+                                <li>点外卖留言多点辣  <span>推荐</span></li>
+                                <li>点外卖留言多点辣  <span>推荐</span></li>
+                                <li>点外卖留言多点辣  <span>推荐</span></li>
+                                <li>点外卖留言多点辣  <span>推荐</span></li>
+                                <li>点外卖留言多点辣  <span>推荐</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul class="fl">
+                    <li><a href="#">武汉入选设计之都</a></li>
+                </ul>
+            </div>
+            <div class="head-new">
+                <ul>
+                    <li>疑嘲讽章子怡演技</li>
+                    <li style="color: #f00">如懿传</li>
+                    <li>宿舍改造成太空舱</li>
+                    <li>我国首现白色马鹿</li>
+                    <li>大V向范冰冰道</li>
+                </ul>
+            </div>
+    	</div>
+        <!-- 导航栏 -->
+        <div class="nav">
+            <div class="b-nav">
+                <ul>
+                    <li><a href="#" class="one">首页</a></li>
+                    <li><a href="#">电视剧</a></li>
+                    <li><a href="#">最新电影</a></li>
+                    <li><a href="#">新闻头条</a></li>
+                    <li><a href="#">八卦娱乐</a></li>
+                    <li><a href="#">军事热点</a></li>
+                    <li><a href="#">热门游戏</a></li>
+                    <li><a href="#">小游戏</a></li>
+                    <li><a href="#">今日特价</a></li>
+                    <li><a href="#">特价旅游</a></li>
+                    <li><a href="#">热点车讯</a></li>
+                </ul>
+            </div>
+            <div class="s-nav">
+                <ul>
+                    <li><a href="#" class="two">权威推荐</a></li>
+                    <li><a href="#">人民网</a></li>
+                    <li><a href="#">新华网</a></li>
+                    <li><a href="#">央视网</a></li>
+                    <li><a href="#">国际在线</a></li>
+                    <li><a href="#">中国日报</a></li>
+                    <li><a href="#">中国网</a></li>
+                    <li><a href="#">中经网</a></li>
+                    <li><a href="#">光明网</a></li>
+                    <li><a href="#">央广网</a></li>
+                    <li><a href="#">求是网</a></li>
+                    <li><a href="#">中青网</a></li>
+                    <li><a href="#">网信网</a></li>
+                    <li><a href="#">汉中市政府</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 广告部分 -->
+        <div class="ban">
+            <img src="images/ban1.png" height="90" width="120" alt="">
+            <img src="images/ban2.png" height="90" width="120" alt="">
+            <img src="images/ban3.png" height="90" width="120" alt="">
+            <img src="images/ban4.png" height="90" width="210" alt="">
+            <img src="images/ban5.png" height="90" width="120" alt="">
+            <img src="images/ban6.png" height="90" width="120" alt="">
+            <img src="images/ban7.png" height="90" width="120" alt="">
+        </div>
+        <!-- 最大的盒子 -->
+        <div class="Box">
+            <!-- 左边的大盒子 -->
+            <div class="Box-left fl">
+                <div class="b-l-top">
+                    <div class="b-l-top-s fl">
+                        <img src="images/icon1.PNG" alt="">
+                        <a href="#">电视剧</a><span>|</span><a href="#">综艺</a>
+                    </div>
+                    <div class="b-l-top-s fl">
+                        <img src="images/icon2.PNG" alt="">
+                        <a href="#">游戏</a><span>|</span><a href="#">小游戏</a>
+                    </div>
+                    <div class="b-l-top-s fl">
+                        <img src="images/icon3.PNG" alt="">
+                        <a href="#">电影</a><span>|</span><a href="#">直播</a>
+                    </div>
+                    <div class="b-l-top-s fl">
+                        <img src="images/icon4.PNG" alt="">
+                        <a href="#">动画</a><span>|</span><a href="#">漫画</a>
+                    </div>
+                    <div class="b-l-top-s fl">
+                        <img src="images/icon5.PNG" alt="">
+                        <a href="#">新闻</a><span>|</span><a href="#">军事</a>
+                    </div>
+                    <div class="b-l-top-s fl">
+                        <img src="images/icon6.PNG" alt="">
+                        <a href="#">旅游</a><span>|</span><a href="#">直播</a>
+                    </div>
+                    <div class="b-l-top-s fl">
+                        <img src="images/icon1.PNG" alt="">
+                        <a href="#">电视剧</a><span>|</span><a href="#">综艺</a>
+                    </div>
+                    <div class="b-l-top-s fl">
+                        <img src="images/icon2.PNG" alt="">
+                        <a href="#">游戏</a><span>|</span><a href="#">小游戏</a>
+                    </div>
+                    <div class="b-l-top-s fl">
+                        <img src="images/icon3.PNG" alt="">
+                        <a href="#">电影</a><span>|</span><a href="#">直播</a>
+                    </div>
+                    <div class="b-l-top-s fl">
+                        <img src="images/icon4.PNG" alt="">
+                        <a href="#">动画</a><span>|</span><a href="#">漫画</a>
+                    </div>
+                </div>
+                <!-- 左边大盒子的下边大盒子 -->
+                <div class="b-l-sub">
+                    <div class="b-l-sub-title">
+                        <ul>
+                            <li class="one"><a href="#" >推荐</a></li>
+                            <li><a href="#">社会</a></li>
+                            <li><a href="#">娱乐</a></li>
+                            <li><a href="#">军事</a></li>
+                            <li><a href="#">体育</a></li>
+                        </ul>
+                    </div>
+                    <div class="b-l-sub-news">
+                        <img src="images/rongmao.jpg" height="110" width="278" alt="">
+                        <ul>
+                            <li><a href="#">政治局常委集体出京 传递出什么信息？</a></li>
+                            <li><a href="#" style="color:#f30;">双11即将到来 首批失信电商黑名单发布</a></li>
+                            <li><a href="#">政治局常委集体出京 传递出什么信息？</a></li>
+                            <li><a href="#">中国台湾省队！中华台北队又"改名"了</a></li>
+                            <li><a href="#">政治局常委集体出京 传递出什么信息？</a></li>
+                            <li><a href="#">月薪1万招不到人 快递可能是外卖员送</a></li>
+                        </ul>
+                    </div>
+                    <div class="b-l-sub-news">
+                        <img src="images/rongmao2.jpg" height="110" width="278" alt="">
+                        <ul>
+                            <li><a href="#">政治局常委集体出京 传递出什么信息？</a></li>
+                            <li><a href="#" style="color:#f30;">吴尊老婆首露</a><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;面杨幂baby为张</a></li>
+                            <li><a href="#">政治局常委集体出京 传递出什么信息？</a></li>
+                            <li><a href="#">中国台湾省队！中华台北队又"改名"了</a></li>
+                            <li><a href="#">吴尊老婆首露面</a><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;面杨幂baby为张</a></li>
+                            <li><a href="#">月薪1万招不到人 快递可能是外卖员送</a></li>
+                        </ul>
+                    </div>
+                    <div class="b-l-sub-title">
+                        <ul>
+                            <li class="one"><a href="#" >推荐</a></li>
+                            <li><a href="#">社会</a></li>
+                            <li><a href="#">娱乐</a></li>
+                            <li><a href="#">军事</a></li>
+                            <li><a href="#">体育</a></li>
+                        </ul>
+                    </div>
+                    <div class="b-l-sub-news2">
+                        <img src="images/rongmao3.jpg" height="110" width="278" alt="">
+                        <div class="b-l-sub-news2-con">
+                            <ul>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                                <li><img src="images/shipin.PNG" alt="" height="15px">小彩旗如今大变样 喝酒泡吧玩早恋</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="b-l-sub-title">
+                        <ul>
+                            <li class="one"><a href="#" >热门</a></li>
+                            <li><a href="#">游戏</a></li>
+                            <li><a href="#">也有</a></li>
+                            <li><a href="#">礼包</a></li>
+                            <li><a href="#">手游</a></li>
+                        </ul>
+                    </div>
+                    <div class="b-l-sub-news3">
+                        <div class="b-l-sub-news3-pic">
+                            <a href="#">和火柴人比一比，看你能跑多快</a>
+                        </div>
+                        <ul class="news3-li fl">
+                            <li>水果疯狂哓哓看</li>
+                            <li>水果疯狂哓哓看</li>
+                            <li>水果疯狂哓哓看</li>
+                            <li>水果疯狂哓哓看</li>
+                            <li>水果疯狂哓哓看</li>
+                            <li>水果疯狂哓哓看</li>
+                        </ul>
+                        <ul class="news3-li fl">
+                            <li>水果疯狂哓哓看</li>
+                            <li>水果疯狂哓哓看</li>
+                            <li>水果疯狂哓哓看</li>
+                            <li>水果疯狂哓哓看</li>
+                            <li>水果疯狂哓哓看</li>
+                            <li>水果疯狂哓哓看</li>
+                        </ul>
+                    </div>
+                    <div class="b-l-sub-news4">
+                        <div class="xingzuo">  
+                            <img src="images/xingzuo.PNG" height="20" alt="">
+                            星座运势
+                        </div>
+                        <div class="xingzuo"><img src="images/xingzuo.PNG" height="20" alt="">星座运势</div>
+                        <div class="xingzuo"><img src="images/xingzuo.PNG" height="20" alt="">星座运势</div>
+                        <div class="xingzuo"><img src="images/xingzuo.PNG" height="20" alt="">星座运势</div>
+                        <div class="xingzuo"><img src="images/xingzuo.PNG" height="20" alt="">星座运势</div>
+                        <div class="xingzuo"><img src="images/xingzuo.PNG" height="20" alt="">星座运势</div>
+                        <div class="xingzuo"><img src="images/xingzuo.PNG" height="20" alt="">星座运势</div>
+                        <div class="xingzuo"><img src="images/xingzuo.PNG" height="20" alt="">星座运势</div>
+                        <ul class="b-l-sub-news4-li fl">
+                            <li>订电影票</li>
+                            <li>在线地图</li>
+                            <li>周公解梦</li>
+                        </ul>
+                        <ul class="b-l-sub-news4-li fl">
+                            <li>订电影票</li>
+                            <li>在线地图</li>
+                            <li>周公解梦</li>
+                        </ul>
+                        <ul class="b-l-sub-news4-li fl">
+                            <li>订电影票</li>
+                            <li>在线地图</li>
+                            <li>周公解梦</li>
+                        </ul>
+                    </div>
+                    <div class="b-l-sub-news5">
+                        <div class="b-l-sub-news5-title">
+                            <a href="#">冷知识</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><span>更多</span>&lt;&lt;</a>
+                        </div>
+                        <img src="images/lengzhishi.jpg" height="70" width="250" alt="">
+                        <ul>
+                            <li>海马实在爸爸的肚子里出僧的?</li>
+                            <li>海马实在爸爸的肚子里出僧的?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 右边的大盒子 -->
+            <div class="Box-right fl">
+                <!-- 右边大盒子的第一个盒子 -->
+                <div class="b-r-box1">
+                    <div class="b-r-box1-1">
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/baidu.gif" height="25" width="22" alt="">
+                            <a href="#">百度</a><span>•</span><a href="#">贴吧</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/xinlang.PNG" height="25" width="22" alt="">
+                            <a href="#">新浪</a><span>•</span><a href="#">微博</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tengxun.PNG" height="25" width="22" alt="">
+                            <a href="#">腾 &nbsp;&nbsp;讯</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tianmao.gif" height="25" width="22" alt="">
+                            <a href="#">天猫</a><span>•</span><a href="#">精选</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/suning.PNG" height="25" width="22" alt="">
+                            <a href="#">京东商城</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/baidu.gif" height="25" width="22" alt="">
+                            <a href="#">百度</a><span>•</span><a href="#">贴吧</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/xinlang.PNG" height="25" width="22" alt="">
+                            <a href="#">新浪</a><span>•</span><a href="#">微博</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tengxun.PNG" height="25" width="22" alt="">
+                            <a href="#">腾 &nbsp;&nbsp;讯</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/baidu.gif" height="25" width="22" alt="">
+                            <a href="#">百度</a><span>•</span><a href="#">贴吧</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/xinlang.PNG" height="25" width="22" alt="">
+                            <a href="#">新浪</a><span>•</span><a href="#">微博</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tengxun.PNG" height="25" width="22" alt="">
+                            <a href="#">腾 &nbsp;&nbsp;讯</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tengxun.PNG" height="25" width="22" alt="">
+                            <a href="#">腾 &nbsp;&nbsp;讯</a>
+                        </div>
+                    </div>
+                    <div class="b-r-box1-2">
+                        <div class="b-r-box1-1-con fl">
+                            <a href="#">东方财富</a><span>•</span><a href="#">理财</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <a href="#" style="color:#FF5500;">东方理财</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <a href="#">房天下</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tengxun.PNG" height="25" width="22" alt="">
+                            <a href="#">携程旅行网</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/baidu.gif" height="25" width="22" alt="">
+                            <a href="#">百度</a><span>•</span><a href="#">贴吧</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/xinlang.PNG" height="25" width="22" alt="">
+                            <a href="#">新浪</a><span>•</span><a href="#">微博</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tengxun.PNG" height="25" width="22" alt="">
+                            <a href="#">腾 &nbsp;&nbsp;讯</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tengxun.PNG" height="25" width="22" alt="">
+                            <a href="#">Booking酒店</a><img src="images/tehui.PNG" height="25" alt="" style="float: right;">
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/xinlang.PNG" height="25" width="22" alt="">
+                            <a href="#">新浪</a><span>•</span><a href="#">微博</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tengxun.PNG" height="25" width="22" alt="">
+                            <a href="#">腾 &nbsp;&nbsp;讯</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/baidu.gif" height="25" width="22" alt="">
+                            <a href="#">百度</a><span>•</span><a href="#">贴吧</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/xinlang.PNG" height="25" width="22" alt="">
+                            <a href="#">新浪</a><span>•</span><a href="#">微博</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tengxun.PNG" height="25" width="22" alt="">
+                            <a href="#">腾 &nbsp;&nbsp;讯</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tengxun.PNG" height="25" width="22" alt="">
+                            <a href="#">腾 &nbsp;&nbsp;讯</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/xinlang.PNG" height="25" width="22" alt="">
+                            <a href="#">新浪</a><span>•</span><a href="#">微博</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/souhu.PNG" height="25" width="22" alt="">
+                            <a href="#">搜狐</a><span>•</span><a href="#">热点</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/tengxun.PNG" height="25" width="22" alt="">
+                            <a href="#">腾 &nbsp;&nbsp;讯</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/baidu.gif" height="25" width="22" alt="">
+                            <a href="#">百度</a><span>•</span><a href="#">贴吧</a>
+                        </div>
+                        <div class="b-r-box1-1-con fl">
+                            <img src="images/xinlang.PNG" height="25" width="22" alt="">
+                            <a href="#">新浪</a><span>•</span><a href="#">微博</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 中间的小盒子1 -->
+                <div class="b-r-min1">
+                    <ul>
+                        <li><a href="#" class="one">聚划算</a></li>
+                        <li><a href="#">申请400号码</a><img src="images/re.PNG" height="10" alt="" ></li>
+                        <li><a href="#">400号码申请</a><img src="images/re.PNG" height="10" alt="" ></li>
+                        <li><a href="#">联想小新air</a><img src="images/re.PNG" height="10" alt="" ></li>
+                        <li><a href="#">电视电脑一体机</a></li>
+                        <li><a href="#">触摸板</a></li>
+                        <li><a href="#">联想小心air</a></li>
+                        <li><a href="#">触摸板</a></li>
+                        <li><a href="#">联想小新air</a></li>
+                    </ul>
+                    <img src="images/guanggao.PNG" height="20" alt="" class="fr">
+                </div>
+                <!-- 右边大盒子的第二个小盒子 -->
+                <div class="b-r-box2">
+                    <div class="b-r-box2-left fl">
+                        猜你喜欢
+                    </div>
+                    <div class="b-r-box2-con fr">
+                        <div class="b-r-box2-con-ul">
+                            <ul>
+                                <li class="one"><a href="#" >游戏</a></li>
+                                <li><a href="#">2017版传奇</a></li>
+                                <li><img src="images/re.PNG" height="15" alt=""><a href="#">贪玩蓝</a></li>
+                                <li><a href="#">一刀9999级</a></li>
+                                <li><a href="#">RMB3倍回收</a></li>
+                                <li><a href="#">魔域页游</a></li>
+                                <li><a href="#">1秒爆神装</a></li>
+                                <li><a href="#">开服送神装</a></li>
+                                <li><a href="#">变态MU</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box2-con-ul">
+                            <ul>
+                                <li class="one"><a href="#" >优选</a></li>
+                                <li><a href="#">六间房直播</a></li>
+                                <li><a href="#">买卖二手车</a></li>
+                                <li><a href="#">手机1111劵</a></li>
+                                <li><a href="#">车险计算器</a></li>
+                                <li><a href="#" style="color: #FF5500">急售二手房</a></li>
+                                <li><a href="#">剁手节攻略</a></li>
+                                <li><a href="#">IT公司急招</a></li>
+                                <li><a href="#" style="color: #FF5500">好货预售</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box2-con-ul">
+                            <ul>
+                                <li class="one"><a href="#" >生活</a></li>
+                                <li><a href="#">开店好生意</a></li>
+                                <li><a href="#" style="color: #FF5500">人人二手车</a></li>
+                                <li><a href="#">美女大秀场</a></li>
+                                <li><a href="#">人人车买车</a></li>
+                                <li><a href="#">信号放大器</a></li>
+                                <li><a href="#">大闸蟹团购</a></li>
+                                <li><a href="#">省心早教</a></li>
+                                <li><a href="#">班亲子活动</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box2-con-ul">
+                            <ul>
+                                <li class="one"><a href="#">新热</a></li>
+                                <li><a href="#">抢双11好货</a></li>
+                                <li><a href="#" style="color: #FF5500">低价机票</a></li>
+                                <li><a href="#">精装三居室</a></li>
+                                <li><a href="#">全球抢先购</a></li>
+                                <li><a href="#">买卖二手房</a></li>
+                                <li><a href="#" style="color: #FF5500">婚纱摄影</a></li>
+                                <li><a href="#">微信交友群</a></li>
+                                <li><a href="#">全球好物</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box2-con-ul">
+                            <ul>
+                                <li class="one"><a href="#">健康</a></li>
+                                <li><a href="#">烤瓷牙优惠</a></li>
+                                <li><a href="#">大姨妈延迟</a></li>
+                                <li><a href="#">小儿腹泻</a></li>
+                                <li><a href="#">玻尿酸美容</a></li>
+                                <li><a href="#">坐月子须知</a></li>
+                                <li><a href="#">中医保健</a></li>
+                                <li><a href="#">二手烟危害</a></li>
+                                <li><a href="#">早孕的症状</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 中间的小盒子2 -->
+                <div class="b-r-min2">
+                    <ul>
+                        <li><a href="#">电视剧</a></li>
+                        <li><a href="#">电影</a></li>
+                        <li><a href="#">新闻</a></li>
+                        <li><a href="#">娱乐</a></li>
+                        <li><a href="#">军事</a></li>
+                        <li><a href="#">小游戏</a></li>
+                        <li><a href="#">心有</a></li>
+                        <li><a href="#">特价</a></li>
+                        <li><a href="#">购物</a></li>
+                        <li><a href="#">综艺</a></li>
+                        <li><a href="#">软件</a></li>
+                        <li class="last"><a href="#">理财</a></li>
+                    </ul>
+                </div>
+                <!-- 右边大盒子的第三个小盒子 -->
+                <div class="b-r-box3">
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">推荐</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><a href="#">叫你理财</a></li>
+                                <li><a href="#">同城交友</a></li>
+                                <li><a href="#">热门房源</a></li>
+                                <li><a href="#">百度网盘</a></li>
+                                <li><a href="#">美食外卖</a></li>
+                                <li><a href="#">找工作</a></li>
+                                <li><a href="#">答题送礼</a></li>
+                                <li><a href="#">华商网</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">视频</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul class="ul2">
+                                <li><a href="#">爱奇艺</a></li>
+                                <li><a href="#">优酷网</a></li>
+                                <li><a href="#">百度视频</a></li>
+                                <li><a href="#">腾讯视频</a></li>
+                                <li><a href="#">芒果TV</a></li>
+                                <li><a href="#">搜狐视频</a></li>
+                                <li><a href="#">高清</a></li>
+                                <li><a href="#">网络自制</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">影视</a><img src="images/dianshi.PNG" height="20" alt=""></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul class="ul3">
+                                <li><a href="#">电视剧</a></li>
+                                <li><a href="#">电影•购票</a></li>
+                                <li><a href="#">综艺</a></li>
+                                <li><a href="#">动漫</a></li>
+                                <li><a href="#">电视</a></li>
+                                <li><a href="#">2017热映大片</a></li>
+                                <li><a href="#">热点资讯</a></li>
+                                <li><a href="#">直播</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">游戏</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><img src="images/4399.PNG" height="15" alt=""><a href="#">4399游戏</a></li>
+                                <li><a href="#">7k7k游戏</a></li>
+                                <li><a href="#">717337•游戏</a></li>
+                                <li><a href="#">星空</a></li>
+                                <li><a href="#">1LOL直播</a></li>
+                                <li><a href="#">hao123游戏</a></li>
+                                <li><a href="#">小游戏</a></li>
+                                <li><a href="#">游民</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">军事</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><a href="#">叫你理财</a></li>
+                                <li><a href="#">同城交友</a></li>
+                                <li><a href="#">热门房源</a></li>
+                                <li><a href="#">百度网盘</a></li>
+                                <li><a href="#">美食外卖</a></li>
+                                <li><a href="#">找工作</a></li>
+                                <li><a href="#">答题送礼</a></li>
+                                <li><a href="#">华商网</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">游戏</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><img src="images/4399.PNG" height="15" alt=""><a href="#">4399游戏</a></li>
+                                <li><a href="#">7k7k游戏</a></li>
+                                <li><a href="#">717337•游戏</a></li>
+                                <li><a href="#">星空</a></li>
+                                <li><a href="#">1LOL直播</a></li>
+                                <li><a href="#">hao123游戏</a></li>
+                                <li><a href="#">小游戏</a></li>
+                                <li><a href="#">游民</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                </div>
+                <!-- 中间的小盒子3 -->
+                <div class="b-r-min3">
+                    <ul>
+                        <li><a href="#">特价</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">团购</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">体育</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">直播</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">NBA</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">足球</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">路由</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">机票</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">没呢票</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">游戏</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">小说</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">手机</a></li>
+                    </ul>
+                </div>
+                <!-- 右边的第四个小盒子 -->
+                <div class="b-r-box3">
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">推荐</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><a href="#">叫你理财</a></li>
+                                <li><a href="#">同城交友</a></li>
+                                <li><a href="#">热门房源</a></li>
+                                <li><a href="#">百度网盘</a></li>
+                                <li><a href="#">美食外卖</a></li>
+                                <li><a href="#">找工作</a></li>
+                                <li><a href="#">答题送礼</a></li>
+                                <li><a href="#">华商网</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">视频</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul class="ul2">
+                                <li><a href="#">爱奇艺</a></li>
+                                <li><a href="#">优酷网</a></li>
+                                <li><a href="#">百度视频</a></li>
+                                <li><a href="#">腾讯视频</a></li>
+                                <li><a href="#">芒果TV</a></li>
+                                <li><a href="#">搜狐视频</a></li>
+                                <li><a href="#">高清</a></li>
+                                <li><a href="#">网络自制</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">影视</a><img src="images/dianshi.PNG" height="20" alt=""></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul class="ul3">
+                                <li><a href="#">电视剧</a></li>
+                                <li><a href="#">电影•购票</a></li>
+                                <li><a href="#">综艺</a></li>
+                                <li><a href="#">动漫</a></li>
+                                <li><a href="#">电视</a></li>
+                                <li><a href="#">2017热映大片</a></li>
+                                <li><a href="#">热点资讯</a></li>
+                                <li><a href="#">直播</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">游戏</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><img src="images/4399.PNG" height="15" alt=""><a href="#">4399游戏</a></li>
+                                <li><a href="#">7k7k游戏</a></li>
+                                <li><a href="#">717337•游戏</a></li>
+                                <li><a href="#">星空</a></li>
+                                <li><a href="#">1LOL直播</a></li>
+                                <li><a href="#">hao123游戏</a></li>
+                                <li><a href="#">小游戏</a></li>
+                                <li><a href="#">游民</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">军事</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><a href="#">叫你理财</a></li>
+                                <li><a href="#">同城交友</a></li>
+                                <li><a href="#">热门房源</a></li>
+                                <li><a href="#">百度网盘</a></li>
+                                <li><a href="#">美食外卖</a></li>
+                                <li><a href="#">找工作</a></li>
+                                <li><a href="#">答题送礼</a></li>
+                                <li><a href="#">华商网</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">游戏</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><img src="images/4399.PNG" height="15" alt=""><a href="#">4399游戏</a></li>
+                                <li><a href="#">7k7k游戏</a></li>
+                                <li><a href="#">717337•游戏</a></li>
+                                <li><a href="#">星空</a></li>
+                                <li><a href="#">1LOL直播</a></li>
+                                <li><a href="#">hao123游戏</a></li>
+                                <li><a href="#">小游戏</a></li>
+                                <li><a href="#">游民</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                </div>
+                <!-- 右边的第五个小盒子 -->
+                <div class="b-r-min3">
+                    <ul>
+                        <li><a href="#">特价</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">团购</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">体育</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">直播</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">NBA</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">足球</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">路由</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">机票</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">没呢票</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">游戏</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">小说</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">手机</a></li>
+                    </ul>
+                </div>
+                <div class="b-r-box3">
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">推荐</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><a href="#">叫你理财</a></li>
+                                <li><a href="#">同城交友</a></li>
+                                <li><a href="#">热门房源</a></li>
+                                <li><a href="#">百度网盘</a></li>
+                                <li><a href="#">美食外卖</a></li>
+                                <li><a href="#">找工作</a></li>
+                                <li><a href="#">答题送礼</a></li>
+                                <li><a href="#">华商网</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">视频</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul class="ul2">
+                                <li><a href="#">爱奇艺</a></li>
+                                <li><a href="#">优酷网</a></li>
+                                <li><a href="#">百度视频</a></li>
+                                <li><a href="#">腾讯视频</a></li>
+                                <li><a href="#">芒果TV</a></li>
+                                <li><a href="#">搜狐视频</a></li>
+                                <li><a href="#">高清</a></li>
+                                <li><a href="#">网络自制</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">影视</a><img src="images/dianshi.PNG" height="20" alt=""></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul class="ul3">
+                                <li><a href="#">电视剧</a></li>
+                                <li><a href="#">电影•购票</a></li>
+                                <li><a href="#">综艺</a></li>
+                                <li><a href="#">动漫</a></li>
+                                <li><a href="#">电视</a></li>
+                                <li><a href="#">2017热映大片</a></li>
+                                <li><a href="#">热点资讯</a></li>
+                                <li><a href="#">直播</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">游戏</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><img src="images/4399.PNG" height="15" alt=""><a href="#">4399游戏</a></li>
+                                <li><a href="#">7k7k游戏</a></li>
+                                <li><a href="#">717337•游戏</a></li>
+                                <li><a href="#">星空</a></li>
+                                <li><a href="#">1LOL直播</a></li>
+                                <li><a href="#">hao123游戏</a></li>
+                                <li><a href="#">小游戏</a></li>
+                                <li><a href="#">游民</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">军事</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><a href="#">叫你理财</a></li>
+                                <li><a href="#">同城交友</a></li>
+                                <li><a href="#">热门房源</a></li>
+                                <li><a href="#">百度网盘</a></li>
+                                <li><a href="#">美食外卖</a></li>
+                                <li><a href="#">找工作</a></li>
+                                <li><a href="#">答题送礼</a></li>
+                                <li><a href="#">华商网</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">游戏</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><img src="images/4399.PNG" height="15" alt=""><a href="#">4399游戏</a></li>
+                                <li><a href="#">7k7k游戏</a></li>
+                                <li><a href="#">717337•游戏</a></li>
+                                <li><a href="#">星空</a></li>
+                                <li><a href="#">1LOL直播</a></li>
+                                <li><a href="#">hao123游戏</a></li>
+                                <li><a href="#">小游戏</a></li>
+                                <li><a href="#">游民</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                </div>
+                <!-- 右边的第刘个小盒子 -->
+                <div class="b-r-min3">
+                    <ul>
+                        <li><a href="#">特价</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">团购</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">体育</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">直播</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">NBA</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">足球</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">路由</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">机票</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">没呢票</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">游戏</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">小说</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">手机</a></li>
+                    </ul>
+                </div>
+                <div class="b-r-box3">
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">推荐</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><a href="#">叫你理财</a></li>
+                                <li><a href="#">同城交友</a></li>
+                                <li><a href="#">热门房源</a></li>
+                                <li><a href="#">百度网盘</a></li>
+                                <li><a href="#">美食外卖</a></li>
+                                <li><a href="#">找工作</a></li>
+                                <li><a href="#">答题送礼</a></li>
+                                <li><a href="#">华商网</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">视频</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul class="ul2">
+                                <li><a href="#">爱奇艺</a></li>
+                                <li><a href="#">优酷网</a></li>
+                                <li><a href="#">百度视频</a></li>
+                                <li><a href="#">腾讯视频</a></li>
+                                <li><a href="#">芒果TV</a></li>
+                                <li><a href="#">搜狐视频</a></li>
+                                <li><a href="#">高清</a></li>
+                                <li><a href="#">网络自制</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">影视</a><img src="images/dianshi.PNG" height="20" alt=""></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul class="ul3">
+                                <li><a href="#">电视剧</a></li>
+                                <li><a href="#">电影•购票</a></li>
+                                <li><a href="#">综艺</a></li>
+                                <li><a href="#">动漫</a></li>
+                                <li><a href="#">电视</a></li>
+                                <li><a href="#">2017热映大片</a></li>
+                                <li><a href="#">热点资讯</a></li>
+                                <li><a href="#">直播</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">游戏</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><img src="images/4399.PNG" height="15" alt=""><a href="#">4399游戏</a></li>
+                                <li><a href="#">7k7k游戏</a></li>
+                                <li><a href="#">717337•游戏</a></li>
+                                <li><a href="#">星空</a></li>
+                                <li><a href="#">1LOL直播</a></li>
+                                <li><a href="#">hao123游戏</a></li>
+                                <li><a href="#">小游戏</a></li>
+                                <li><a href="#">游民</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">军事</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><a href="#">叫你理财</a></li>
+                                <li><a href="#">同城交友</a></li>
+                                <li><a href="#">热门房源</a></li>
+                                <li><a href="#">百度网盘</a></li>
+                                <li><a href="#">美食外卖</a></li>
+                                <li><a href="#">找工作</a></li>
+                                <li><a href="#">答题送礼</a></li>
+                                <li><a href="#">华商网</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">游戏</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><img src="images/4399.PNG" height="15" alt=""><a href="#">4399游戏</a></li>
+                                <li><a href="#">7k7k游戏</a></li>
+                                <li><a href="#">717337•游戏</a></li>
+                                <li><a href="#">星空</a></li>
+                                <li><a href="#">1LOL直播</a></li>
+                                <li><a href="#">hao123游戏</a></li>
+                                <li><a href="#">小游戏</a></li>
+                                <li><a href="#">游民</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                </div>
+                <div class="b-r-min3">
+                    <ul>
+                        <li><a href="#">特价</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">团购</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">体育</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">直播</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">NBA</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">足球</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">路由</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">机票</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">没呢票</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">游戏</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">小说</a></li>
+                        <li class="hengxian">-</li>
+                        <li><a href="#">手机</a></li>
+                    </ul>
+                </div>
+                <div class="b-r-box3">
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">推荐</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><a href="#">叫你理财</a></li>
+                                <li><a href="#">同城交友</a></li>
+                                <li><a href="#">热门房源</a></li>
+                                <li><a href="#">百度网盘</a></li>
+                                <li><a href="#">美食外卖</a></li>
+                                <li><a href="#">找工作</a></li>
+                                <li><a href="#">答题送礼</a></li>
+                                <li><a href="#">华商网</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">视频</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul class="ul2">
+                                <li><a href="#">爱奇艺</a></li>
+                                <li><a href="#">优酷网</a></li>
+                                <li><a href="#">百度视频</a></li>
+                                <li><a href="#">腾讯视频</a></li>
+                                <li><a href="#">芒果TV</a></li>
+                                <li><a href="#">搜狐视频</a></li>
+                                <li><a href="#">高清</a></li>
+                                <li><a href="#">网络自制</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">影视</a><img src="images/dianshi.PNG" height="20" alt=""></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul class="ul3">
+                                <li><a href="#">电视剧</a></li>
+                                <li><a href="#">电影•购票</a></li>
+                                <li><a href="#">综艺</a></li>
+                                <li><a href="#">动漫</a></li>
+                                <li><a href="#">电视</a></li>
+                                <li><a href="#">2017热映大片</a></li>
+                                <li><a href="#">热点资讯</a></li>
+                                <li><a href="#">直播</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">游戏</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><img src="images/4399.PNG" height="15" alt=""><a href="#">4399游戏</a></li>
+                                <li><a href="#">7k7k游戏</a></li>
+                                <li><a href="#">717337•游戏</a></li>
+                                <li><a href="#">星空</a></li>
+                                <li><a href="#">1LOL直播</a></li>
+                                <li><a href="#">hao123游戏</a></li>
+                                <li><a href="#">小游戏</a></li>
+                                <li><a href="#">游民</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">军事</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><a href="#">叫你理财</a></li>
+                                <li><a href="#">同城交友</a></li>
+                                <li><a href="#">热门房源</a></li>
+                                <li><a href="#">百度网盘</a></li>
+                                <li><a href="#">美食外卖</a></li>
+                                <li><a href="#">找工作</a></li>
+                                <li><a href="#">答题送礼</a></li>
+                                <li><a href="#">华商网</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                    <div class="b-r-box3-con">
+                        <div class="b-r-box3-con-left fl"><a href="#">游戏</a></div>
+                        <div class="b-r-box3-con-min fl">
+                            <ul>
+                                <li><img src="images/4399.PNG" height="15" alt=""><a href="#">4399游戏</a></li>
+                                <li><a href="#">7k7k游戏</a></li>
+                                <li><a href="#">717337•游戏</a></li>
+                                <li><a href="#">星空</a></li>
+                                <li><a href="#">1LOL直播</a></li>
+                                <li><a href="#">hao123游戏</a></li>
+                                <li><a href="#">小游戏</a></li>
+                                <li><a href="#">游民</a></li>
+                            </ul>
+                        </div>
+                        <div class="b-r-box3-con-right fr">更多&gt;&gt;</div>
+                    </div>
+                </div>
+                <div class="b-r-new">
+                    <img src="images/left.PNG" height="15" alt="" class="fl">
+                    <div class="b-r-new-con fl">
+                        <div class="b-r-new-con-pic">
+                            <img src="images/fuji.jpg" height="80" width="190" alt="">
+                           <div class="b-r-new-con-pic-sonl">&gt;</div>
+                           <div class="b-r-new-con-pic-son2">&lt;</div>
+                        </div>
+                        <ul>
+                            <li><a href="#">吃了不亭口的经典芦苇零食</a></li>
+                            <li><a href="#">吃了不亭口的经典芦苇零食</a></li>
+                            <li><a href="#">吃了不亭口的经典芦苇零食</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="b-r-new-con fl">
+                        <div class="b-r-new-con-pic">
+                           <img src="images/p2p.jpg" height="80" width="190" alt="">
+                           <div class="b-r-new-con-pic-sonl">&gt;</div>
+                           <div class="b-r-new-con-pic-son2">&lt;</div>
+                        </div>
+                        <ul>
+                            <li><a href="#">净水器加盟代理</a></li>
+                            <li><a href="#">吃了不亭口的经典芦苇零食</a></li>
+                            <li><a href="#">吃了不亭口的经典芦苇零食</a></li>
+                           
+                        </ul>
+                    </div>
+                    <div class="b-r-new-con fl">
+                        <div class="b-r-new-con-pic">
+                           <img src="images/bo.jpg" height="80" width="190" alt="">
+                           <div class="b-r-new-con-pic-sonl">&gt;</div>
+                           <div class="b-r-new-con-pic-son2">&lt;</div>
+                        </div>
+                        <ul>
+                            <li><a href="#">净水器加盟代理</a></li>
+                            <li><a href="#">吃了不亭口的经典芦苇零食</a></li>
+                            <li><a href="#">吃了不亭口的经典芦苇零食</a></li>
+                        
+                        </ul>
+                    </div>
+                    <div class="b-r-new-con fl">
+                        <div class="b-r-new-con-pic">
+                           <img src="images/dai.jpg" height="80" width="190" alt="">
+                           <div class="b-r-new-con-pic-sonl">&gt;</div>
+                           <div class="b-r-new-con-pic-son2">&lt;</div>
+                        </div>
+                        <ul>
+                            <li><a href="#">净水器加盟代理</a></li>
+                            <li><a href="#">吃了不亭口的经典芦苇零食</a></li>
+                            <li><a href="#">吃了不亭口的经典芦苇零食</a></li>
+                        </ul>
+                    </div>
+                    <img src="images/right.PNG" height="15" alt="" class="fr">
+                </div>
+                <!-- 最后一个小盒子 -->
+                <div class="b-r-last">
+                    <div class="b-r-last-con">
+                        <a href="#">新闻</a>
+                        <a href="#"><span>不容错过的好资讯</span></a>
+                    </div>
+                    <div class="b-r-last-con">
+                        <a href="#">影视</a>
+                        <a href="#"><span>国民大生活</span></a>
+                    </div>
+                    <div class="b-r-last-con">
+                        <a href="#">购物</a>
+                        <a href="#"><span>好活不过百</span></a>
+                    </div>
+                    <div class="b-r-last-con">
+                        <a href="#">网聚</a>
+                        <a href="#"><span>爸爸去哪儿5</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 视频热播部分 -->
+        <div class="shipin-title">
+            <div class="shipin-title-left fl">视频热播</div>
+            <ul class="fl">
+                <li><a href="#">电视剧</a></li>
+                <li><a href="#">电影</a></li>
+                <li><a href="#">综艺</a></li>
+                <li><a href="#">动漫</a></li>
+                <li><a href="#">网剧</a></li>
+                <li><a href="#">搞笑</a></li>
+                <li><a href="#">直播</a></li>
+            </ul>
+            <div class="shipin-title-right fr">国民大生活&nbsp;&nbsp;亲爱的客栈</div>
+        </div>
+        <div class="shipin-con">
+            <img src="images/left.PNG" alt="" class="fl">
+            <div class="shipin-con-left fl">
+                <div class="shipin-con-Bpic fl">
+                    <img src="images/shipin2.PNG" height="210" alt="" class="fl">
+                </div>
+                <div class="shipin-con-Spic fl">
+                    <a href="#">女子结婚穿姐姐婚纱被骂</a>
+                    <a href="#">女子结婚穿姐姐婚纱被骂</a>
+                    <a href="#">女子结婚穿姐姐婚纱被骂</a>
+                    <a href="#">女子结婚穿姐姐婚纱被骂</a>
+                    <a href="#">女子结婚穿姐姐婚纱被骂</a>
+                    <a href="#">女子结婚穿姐姐婚纱被骂</a>
+                </div>
+                <div class="shipin-con-title fl">
+                    <span class="fl">正在热播</span>
+                    <ul class="fl">
+                        <li><a href="#">传奇大亨</a></li>
+                        <li><a href="#">特勤经营</a></li>
+                    </ul>
+                </div>
+                <div class="shipin-con-last fl">
+                    <div class="shipin-con-last-pic">剧集&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更新至8及</div>
+                    <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;急诊科张嘉译救死扶伤</a>
+                </div>
+                <div class="shipin-con-last fl">
+                    <div class="shipin-con-last-pic">剧集&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更新至8及</div>
+                    <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;急诊科张嘉译救死扶伤</a>
+                </div>
+                <div class="shipin-con-last fl">
+                    <div class="shipin-con-last-pic">剧集&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更新至8及</div>
+                    <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;急诊科张嘉译救死扶伤</a>
+                </div>
+                <div class="shipin-con-last fl">
+                    <div class="shipin-con-last-pic">剧集&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更新至8及</div>
+                    <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;急诊科张嘉译救死扶伤</a>
+                </div>
+                <div class="shipin-con-last fl">
+                    <div class="shipin-con-last-pic">剧集&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更新至8及</div>
+                    <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;急诊科张嘉译救死扶伤</a>
+                </div>
+            </div>
+            
+            <div class="shipin-con-right fl">
+                <ul>
+                    <li class="one"><div class="squre1">1</div>将军在上</li>
+                    <li><div class="squre2">2</div>急诊科医生</li>
+                    <li><div class="squre3">3</div>烦人的品格</li>
+                    <li><div class="squre">4</div>传奇大亨</li>
+                    <li><div class="squre">5</div>国民大生活</li>
+                    <li><div class="squre">6</div>独步天下</li>
+                    <li><div class="squre">7</div>比还相信</li>
+                    <li><div class="squre">8</div>那年2</li>
+                    <li><div class="squre">9</div>白夜追凶</li>
+                    <li><div class="squre">10</div>那年花开月正圆</li>
+                </ul>
+            </div>
+            <img src="images/right.PNG" alt=""  class="fr">
+        </div>
+        <!-- 热门游戏部分 -->
+        <div class="game-title">
+            <div class="game-title-left fl">视频热播</div>
+            <ul class="fl">
+                <li class="one"><a href="#">热门游戏</a></li>
+                <li><a href="#">网页游戏</a></li>
+                <li><a href="#">网络游戏</a></li>
+                <li><a href="#">休闲棋牌</a></li>
+            </ul>
+            <div class="game-title-right fr">决堤求生大逃杀&nbsp;&nbsp;王者荣耀</div>
+        </div>
+        <div class="game-con">
+            <div class="game-con-left fl">
+                <div class="game-con-left-pic1">愤怒的小鸟</div>
+                <div class="game-con-left-pic2">
+                    <img src="images/you1.jpg" height="62" width="70" alt="">
+                    <a href="#">神鬼无双</a>
+                </div>
+                <div class="game-con-left-pic2 te">
+                    <img src="images/you1.jpg" height="62" width="70" alt="">
+                    <a href="#">神鬼无双</a>
+                </div>
+                <div class="game-con-left-pic2">
+                    <img src="images/you1.jpg" height="62" width="70" alt="">
+                    <a href="#">神鬼无双</a>
+                </div>
+                <div class="game-con-left-pic2">
+                    <img src="images/you1.jpg" height="62" width="70" alt="">
+                    <a href="#">神鬼无双</a>
+                </div>
+                <div class="game-con-left-pic2 te">
+                    <img src="images/you1.jpg" height="62" width="70" alt="">
+                    <a href="#">神鬼无双</a>
+                </div>
+                <div class="game-con-left-pic2">
+                    <img src="images/you1.jpg" height="62" width="70" alt="">
+                    <a href="#">神鬼无双</a>
+                </div>
+            </div>
+            <div class="game-con-right fl">
+                <!-- 植物大战僵尸 -->
+                <div class="game-con-right-left fl">
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                    <div class="game-con-right-left-pic">
+                        <img src="images/you2f.jpg" height="70" width="70" alt="">
+                        <a href="#">植物大战</a>
+                    </div>
+                </div> 
+                <!-- 停车高手        -->
+                <div class="game-con-right-right fr">
+                    <div class="game-con-right-right-pic">
+                        停车高手教你如何停好车
+                    </div>
+                    <ul>
+                        <li><span style="color: red">1.</span>&nbsp;运用策略打败恐怖分子</li>
+                        <li><span style="color: red">2.</span>&nbsp;运用策略打败恐怖分子</li>
+                        <li><span style="color: red">3.</span>&nbsp;运用策略打败恐怖分子</li>
+                        <li><span>4.</span>&nbsp;运用策略打败恐怖分子</li>
+                        <li><span>5.</span>&nbsp;运用策略打败恐怖分子</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 生活这点事部分 -->
+        <div class="life-title">
+            <div class="life-title-left fl">
+                生活这点事
+            </div>
+            <div class="life-title-right fr">
+                <a href="#">史上最开心十足的穿帮镜头</a><a href="#">温泉养生好去处</a><a href="#">三亚租房过冬</a>
+            </div>
+        </div>
+        <div class="life-con">
+            <div class="life-con-pic fl">
+                <div class="life-con-pic-1">
+                现代版孙悟空被压在山下13年
+                </div>
+                <ul>
+                    <li><a href="#">古代人请奶娘有一非常残忍的原因</a></li>
+                    <li><a href="#">惊呆！皇帝做这事时竟要被计时</a></li>
+                    <li><a href="#">乐山大佛显灵四次流泪要出大事</a></li>
+                    <li><a href="#">晒过的被子都有一股味道竟是因</a></li>
+                    <li><a href="#">古代人请奶娘有一非常残忍的原因</a></li>
+                </ul>
+            </div>
+            <div class="life-con-pic fl">
+                <div class="life-con-pic-2">
+                蒙娜丽莎500年秘密终于被破解
+                </div>
+                <ul>
+                    <li><a href="#">惊呆！皇帝做这事时竟要被计时</a></li>
+                    <li><a href="#">古代太监流行和宫女恋爱竟因…</a></li>
+                    <li><a href="#">晒过的被子都有一股味道竟是因</a></li>
+                    <li><a href="#">乐山大佛显灵四次流泪要出大事</a></li>
+                    <li><a href="#">乐山大佛显灵四次流泪要出大事</a></li>
+                </ul>
+            </div>
+            <div class="life-con-pic fl">
+                <div class="life-con-pic-3">
+                这些奇葩女司机你保证没见过
+                </div>
+                <ul>
+                    <li><a href="#">惊呆！皇帝做这事时竟要被计时</a></li>
+                    <li><a href="#">晒过的被子都有一股味道竟是因</a></li>
+                    <li><a href="#">古代太监流行和宫女恋爱竟因…</a></li>
+                    <li><a href="#">乐山大佛显灵四次流泪要出大事</a></li>
+                    <li><a href="#">古代人请奶娘有一非常残忍的原因</a></li>
+                </ul>
+            </div>
+            <div class="life-con-pic fl">
+                <div class="life-con-pic-2">
+                蒙娜丽莎500年秘密终于被破解
+                </div>
+                <ul>
+                    <li><a href="#">惊呆！皇帝做这事时竟要被计时</a></li>
+                    <li><a href="#">乐山大佛显灵四次流泪要出大事</a></li>
+                    <li><a href="#">惊呆！皇帝做这事时竟要被计时</a></li>
+                    <li><a href="#">乐山大佛显灵四次流泪要出大事</a></li>
+                    <li><a href="#">乐山大佛显灵四次流泪要出大事</a></li>
+                </ul>
+            </div>
+            <div class="life-con-pic fl">
+                <div class="life-con-pic-4">
+                网上撩妹撂倒前女友
+                </div>
+                <ul>
+                    <li><a href="#">惊呆！皇帝做这事时竟要被计时</a></li>
+                    <li><a href="#">乐山大佛显灵四次流泪要出大事</a></li>
+                    <li><a href="#">惊呆！皇帝做这事时竟要被计时</a></li>
+                    <li><a href="#">乐山大佛显灵四次流泪要出大事</a></li>
+                    <li><a href="#">乐山大佛显灵四次流泪要出大事</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 轻松十分钟部分 -->
+        <div class="relax-title">
+            <ul>
+                <li class="one"><a href="#">轻松一刻</a></li>
+                <li><a href="#">花边猛料</a></li>
+                <li><a href="#">美女秀场</a></li>
+                <li><a href="#">搞笑视频</a></li>
+            </ul>
+        </div>
+        <div class="relax-con">
+            <img src="images/left.PNG" alt="" class="fl">
+            <div class="relax-con-pic">
+                <div class="relax-con-pic-1">
+                    <img src="images/xintongshi.PNG" height="100"alt="">
+                    <a href="#">新同事来了，很难专心工作了</a>
+                </div>
+                <div class="relax-con-pic-1">
+                    <img src="images/liyifei.PNG" height="100"alt="">
+                    <a href="#">旁边这位，你确定要一起聊个天？</a>
+                </div>
+                <div class="relax-con-pic-1">
+                    <img src="images/xiujian.PNG" height="100"alt="">
+                    <a href="#">说好的修建呢</a>
+                </div>
+                <div class="relax-con-pic-1">
+                    <img src="images/ying.PNG" height="100"alt="">
+                    <a href="#">感觉自己被人家赢了20年</a>
+                </div>
+                <div class="relax-con-pic-1">
+                    <img src="images/xintongshi.PNG" height="100"alt="">
+                    <a href="#">新同事来了，让我怎么好好工作。</a>
+                </div>
+                <div class="relax-con-pic-1">
+                    <img src="images/liyifei.PNG" height="100"alt="">
+                    <a href="#">旁边这位，你确定要一起聊个天？</a>
+                </div>
+                <div class="relax-con-pic-1">
+                    <img src="images/xiujian.PNG" height="100"alt="">
+                    <a href="#">说好的修建呢</a>
+                </div>
+                <div class="relax-con-pic-1">
+                    <img src="images/ying.PNG" height="100"alt="">
+                    <a href="#">感觉自己被人家赢了20年</a>
+                </div>
+                <div class="relax-con-pic-1">
+                    <img src="images/xiujian.PNG" height="100"alt="">
+                    <a href="#">说好的修建呢</a>
+                </div>
+                <div class="relax-con-pic-1">
+                    <img src="images/ying.PNG" height="100"alt="">
+                    <a href="#">感觉自己被人家赢了20年</a>
+                </div>
+            </div>
+            <img src="images/right.PNG" alt="" class="fr">
+        </div>
+        <!-- 底部 -->
+        <div class="footer">
+            <div class="footer-con">
+                <div class="footer-con-1 fl">
+                    <div class="footer-con-1-t">
+                        <ul>
+                            <li class="one">必备软件</li>
+                            <li class="shuxian">|</li>
+                            <li>常用软件</li>
+                        </ul>
+                    </div>
+                    <div class="footer-con-1-t-li">
+                        <ul class="fl">
+                            <li class="li1"><a href="#">office2013</a></li>
+                            <li class="li2"><a href="#">同花顺</a></li>
+                            <li class="li3"><a href="#">pptv网络电视</a></li>
+                            <li class="li4"><a href="#">PDF转WORD</a></li>
+                            <li class="li5"><a href="#">微信电脑板</a></li>
+                        </ul>
+                        <ul class="fl">
+                            <li class="li6"><a href="#">期兔刷机</a></li>
+                            <li class="li7"><a href="#">百度手机助手</a></li>
+                            <li class="li8"><a href="#">yy语音</a></li>
+                            <li class="li9"><a href="#">天气预报</a></li>
+                            <li class="li10"><a href="#">爱奇艺</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-con-2 fl">
+                    <div class="footer-con-2-t">
+                        <ul>
+                            <li class="one">生活服务</li>
+                        </ul>
+                    </div>
+                    <div class="footer-con-2-li">
+                        <ul>
+                            <li><a href="#">天气<img src="images/tehui.PNG" height="30" alt=""></a></li>
+                            <li><a href="#">查询</a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车</a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">天气<img src="images/tehui.PNG" height="30" alt=""></a></li>
+                            <li><a href="#">查询</a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车</a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">天气</a></li>
+                            <li><a href="#">查询</a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车<img src="images/tehui.PNG" height="30" alt=""></a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">天气</a></li>
+                            <li><a href="#">查询</a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车</a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-con-2 fl">
+                    <div class="footer-con-2-t">
+                        <ul>
+                            <li class="one">娱乐休闲</li>
+                        </ul>
+                    </div>
+                    <div class="footer-con-2-li">
+                        <ul>
+                            <li><a href="#" style="color: #f30">天气</a></li>
+                            <li><a href="#">查询</a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车<img src="images/tehui.PNG" height="30" alt=""></a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">天气</a></li>
+                            <li><a href="#">查询</a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车</a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">天气<img src="images/tehui.PNG" height="30" alt=""></a></li>
+                            <li><a href="#">查询</a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车</a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#" style="color: #f30">天气</a></li>
+                            <li><a href="#">查询</a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车</a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-con-2 fl">
+                    <div class="footer-con-2-t">
+                        <ul>
+                            <li class="one">其他类别</li>
+                            <li class="shuxian">|</li>
+                            <li>地方网站</li>
+                        </ul>
+                    </div>
+                    <div class="footer-con-2-li">
+                        <ul>
+                            <li><a href="#" style="color: #f30">天气</a></li>
+                            <li><a href="#">查询</a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车</a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">天气</a></li>
+                            <li><a href="#">查询<img src="images/tehui.PNG" height="30" alt=""></a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车</a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">天气</a></li>
+                            <li><a href="#">查询</a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车</a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#" style="color: #f30">天气</a></li>
+                            <li><a href="#">查询</a></li>
+                            <li><a href="#">汽车</a></li>
+                            <li><a href="#">火车</a></li>
+                            <li><a href="#">财经</a></li>
+                            <li><a href="#">女性</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <a href="#">关于本站</a>
+                <a href="#">常见问题</a>
+                <a href="#"><img src="images/tuiguang.PNG" height="13" alt="">百度推广</a>
+                <a href="#">意见反馈</a>
+                <a href="#">全站地图</a>
+                <a href="#"><img src="images/beian.PNG" height="13" alt="">京公网安备 11000002000001号京ICP证030173号</a>
+                <a href="#">违法和不良信息举报电话：010-59922128 <img src="images/last.PNG" height="13" alt=""></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" > <img src="images/wei.PNG" height="13" alt="">下载手机端</a>
+            </div>
+        </div>
+    </body>
+</html>

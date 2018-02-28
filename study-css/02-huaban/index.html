@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	/* 初始化 */
+			body,ul,li,h2{
+				margin: 0;
+				padding: 0;
+			}
+			input,img{
+				border: 0 none;
+			}
+			input{
+				outline-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			/* 最上面部分样式 */
+			.box{
+				height: 510px;
+				background: url("images/index.jpg");
+				padding-top: 50px;
+			}
+			.fl{
+				float: left;
+			}
+			.fr{
+				float: right;
+			}
+			.box .nav{
+				width: 100%;
+				height: 47px;
+				position: fixed;
+				top: 0;
+				color: #fff;
+			}
+			.nav .nav-con{
+				width: 650px;
+				height: 47px;
+			}
+			.nav .nav-con .nav-t{
+				color: #fff;
+				width: 104px;
+				height: 30px;
+				font: 300 25px/30px microsoft yahei;
+				padding-top: 12px;
+			}
+			img[src="images/huaban.png"]{
+				float: left;
+				margin-left: 12px;
+				margin-right: 5px;
+				vertical-align: middle;
+				padding: 0;
+
+			}
+			.nav .nav-con ul{
+				margin-top: 12px;
+				float: left;
+			}
+			.nav .nav-con ul li{
+				list-style: none;
+				float: left;
+				padding: 0 16px;
+				height: 30px;
+				line-height: 30px;
+			}
+			.nav .nav-con ul li a{
+				display: inline-block;
+				height: 30px;
+				line-height: 30px;
+				font-size: 14px;
+				color: #fff;
+			}
+			.nav .nav-con ul li a .underline{
+				display: inline-block;
+				height: 30px;
+				
+			}
+			.nav .nav-con ul li a .underline:hover{
+				border-bottom: 1px solid #fff;
+			}
+			.nav .nav-con ul ._li{
+				border-right: 1px solid #fff;
+			}
+			.nav .nav-con li.new{
+				padding-right: 40px;
+				background: url("images/new.png") no-repeat right;
+			}
+			/* 导航栏样式 */
+			.nav-search {
+				width: 690px;
+				height: 34px;
+				float: left;
+				background-color: #fff;
+				margin-top: 10px;
+				border-radius: 3px;
+				border: 1px solid #ccc;
+				position: relative;
+				display: none;
+			}
+			.nav-search-inp {
+				width: 685px;
+				height: 32px;
+				margin-left: 5px;
+			}
+			.nav-search label {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 34px;
+				text-align: center;
+				line-height: 34px;
+				color: #999;
+			}
+			.nav .nav-login{
+				width: 152px;
+				height: 47px;
+			}
+			.nav .nav-login input{
+				height: 35px;
+				width: 55px;
+				margin: 12px 6px 0 6px;
+				color: #fff;
+			}
+			.nav .nav-login input[value="注册"]{
+				background-color: rgba(210, 60, 1, 0.7);
+				border-radius: 3px;
+			}
+			.nav .nav-login input[value="登陆"]{
+				background-color: rgba(255, 255, 255, 0.0);
+				border: 1px solid #ccc;
+				border-radius: 3px;
+				color: #fff;
+			}
+			.title{
+				height: 106px;
+				width: 670px;
+				color: #fff;
+				text-align: center;
+				margin: 50px auto 10px; 
+				font: 100 40px/100px microsoft yahei;
+				margin-top: 42px;
+			}
+			.ti{
+				width: 530px;
+				height: 33px;
+				margin: 10px auto;
+			}
+			.box input[value="搜索你喜欢的"]{
+				width: 530px;
+				height: 33px;
+				border: 1px solid #DBD6D2;
+				/* border-color: #B2A185; */
+				color: #757575;
+				background: url("images/serch.jpg") no-repeat right;
+			}
+			.box .word{
+				text-align: center;
+				margin-top: 15px;
+				color: #fff;
+				margin: 15px auto;
+				width: 590px;
+				height: 19px;
+				font-size: 14px;
+				font-weight: 100;
+			}
+			.box .word p a{
+				color: #fff;
+				text-decoration: none;
+				margin-left: 8px;
+			}
+			.box .word p a:hover{
+				text-decoration: underline;
+			}
+			/* 中间介绍部分样式 */
+			.intro{
+				height: 20px;
+				margin: 20px 10px;
+			}
+			.intro-left,.intro-right{
+				height: 11px;
+				width: 650px;
+				margin: 8px auto 0;
+				border-top: 1px solid #EDEDED;
+			}
+			.intro-name{
+				height: 20px;
+				width: 190px;
+				text-align: center;
+				color: #999999;
+			}
+			/* 关注部分样式 */
+			.concen{
+				width: 1030px;
+				height: 175px;
+				margin: 0 auto;
+			}
+			.concen img{
+				width: 240px;
+				height: 173px;
+				margin: 0 5px;
+			}
+			/* 推荐部分央视 */
+			.give{
+				height: 600px;
+				margin: 0 10px;
+			}
+
+			/* 加载更多样式 */
+			.load{
+				height: 30px;
+				margin: 10px 10px;
+			}
+			.load-left,.load-right{
+				height: 18px;
+				width: 310px;
+				margin: 12px auto 0;
+				border-top: 1px solid #EDEDED;
+			}
+			.load-min{
+				margin: 0 37px;
+				height: 30px;
+				line-height: 30px;
+				background-color: #EDEDED;
+				color: #999;
+				text-align: center;
+				width: 800px;
+			}
+			.give {
+				padding-top: 42px;
+			}
+			.give a{
+				display: inline-block;
+				height: 288px;
+				width: 288px;
+				margin: 4px 0 0 4px;
+				
+			}
+			.give a:hover{
+				opacity: 0.8;
+			}
+			.give-pic1{
+				background: url("images/give1.jpg");
+			}
+			.give-pic2{
+				background: url("images/give2.jpg");
+			}
+			.give-pic3{
+				background: url("images/give3.jpg");
+			}
+			.give-pic4{
+				background: url("images/give4.jpg");
+			}
+			.give-pic5{
+				background: url("images/give5.jpg");
+			}
+			.give-pic6{
+				background: url("images/give6.jpg");
+			}
+			.give .give-word1{
+				height: 288px;
+				width: 289px;
+				margin: 4px 8px;
+			
+			}
+			.give .give-word3,.give .give-word4{
+				background-color: #FAFAFA;
+				height: 288px;
+				width: 289px;
+				margin: 4px 8px;
+			}
+			.give .give-word4{
+				width: 278px;
+				height: 140px;
+				text-align: right;
+				padding-right: 10px;
+				padding-top: 148px;
+			}
+			.give .give-word4 .grade1{
+				margin-left: 175px;
+			}
+			.give .give-word1-con1,.give .give-word1-con2{
+				height: 140px;
+				width: 288px;
+				background-color: #FAFAFA;
+			}
+			.give .give-word1-con2{
+				width: 278px;
+			}
+			.give p{
+				margin: 0;
+				padding: 0;
+			}
+			.give .give-word1-con1{
+				margin-bottom: 5px;
+			}
+			.give .give-word1-con2{
+				text-align: right;
+				padding-right: 10px;
+			}
+			.give .give-word1-con2 .grade1{
+				margin-left: 175px;
+			}
+			.give .grade1{
+				font: 100 35px microsoft yahei;
+				color: #DDDDDD;
+				height: 45px;
+				padding-bottom: 3px;
+				width: 100px;
+				border-bottom: 1px solid #DDD;
+				margin-top: 6px;
+				margin-left: 10px;
+			}
+			.give .grade2{
+				height: 30px;
+				line-height: 30px;
+				margin-left: 15px;
+			}
+			.give  a.grade2{
+				display: inline;
+				border: none;
+				color: #000;
+				font-size: 18px;
+			}
+			.give  a.grade2:hover{
+				color: #EF565E;
+			}
+			.give .grade3{
+				font-size: 12px;
+				color: #999;
+				margin-left: 10px;
+			}
+			.give .grade4{
+				margin-top: 10px;
+				margin-left: 10px;
+				color: #999; 
+			}
+			.give span{
+				color: #AA7E82;
+			} 
+			/* 列表部分样式 */
+			.list{
+				height: 278px;
+				margin: 10px 10px 0 10px;
+			}
+			.list .head{
+				height: 30px;
+				border-bottom: 2px solid #EDEDED;
+			}
+			.list .head .head-left,.list .head .head-right{
+				height: 30px;
+				width: 150px;
+				line-height: 30px;
+			}
+			.list .head .head-left{
+				color: #444444;
+			}
+			.list .head .head-right{
+				text-align: right;
+				color: #9E7E6B;
+			}
+			.list .con{
+				height: 268px;
+			}
+			.list .con ul{
+				list-style: none;
+				margin-right: 236px;
+				margin-top: 25px;
+				font-weight: 400;
+				font-size:14px;
+			}
+			.list .con ul li{
+				height: 28px;
+			}
+			.list .con ul li a{
+				color: #000;
+			}
+			.list .con ul li a:hover{
+				text-decoration: underline;
+				color: #900;
+			}
+			/* 脚步样式 */
+			.footer{
+				height: 200px;
+				margin: 0px;
+				background-color: #333;
+				color: #fff;
+			}
+			.footer dl{
+				margin-top: 25px;
+				margin-left: 10px;
+			}
+			.footer dl dd{
+				margin: 0;
+				padding: 0;
+				height: 30px;
+				font-weight: 300;
+				color: #BBBBBB;
+				font-size: 14px;
+			}
+			.footer dl dt{
+				height: 40px;
+				color: #DDD;
+			}
+			.footer dl{
+				margin-right: 100px;
+			}
+			.footer .right{
+				height: 180px;
+				width: 300px;
+				margin-right: 10px;
+				margin-top: 20px;
+				border-left: 1px solid #555;
+				border-right: 1px solid #555;
+				background: url("images/bottom.png") no-repeat 20px 155px;
+			}
+			.right-con1{
+				color: #DDD;
+				margin-left: 20px;
+			}
+			.right-con2{
+				font-weight: 300;
+				color: #BBBBBB;
+				font-size: 14px;
+				margin-left: 20px;
+			}
+			/* 底部样式 */
+			.bottom{
+				height: 60px;
+				background-color: #000;
+				text-align: center;
+			}
+			.bottom ul{
+				height: 60px;
+				color: #6D6B6D;
+				text-align: center;
+				width: 500px;
+				margin: 0 auto;
+				list-style: none;
+			}
+			.bottom ul li{
+				float: left;
+				height: 16px;
+				margin-top: 20px;
+				padding: 0 10px;
+				font-size: 14px;
+			}
+			.bottom .b1{
+				border-right: 1px solid #6D6B6D;
+			}
+			.bottom ul li a{
+				color: #6D6B6D;
+				text-decoration: none;
+			}
+			.bottom ul li a:hover{
+				text-decoration: underline;
+			}
+        </style>
+        <script src="animate.js"></script>
+        <script type="text/javascript">
+	        window.onload = function () {
+	        	//label标签，里面有内容的时候隐藏，没有内容显示
+	        	var search = document.getElementsByClassName("nav-search")[0];
+	        	var label = search.children[0];
+	        	var inp = search.children[1];
+	        	var nav = document.getElementsByClassName("nav")[0];
+	        	var aArr = nav.getElementsByTagName("a");
+	        	var huaban = document.getElementsByClassName("nav-t")[0];
+	        	var navLogin = document.getElementsByClassName("nav-login")[0];
+	        	var but1 = navLogin.children[1];
+	        	inp.oninput = function () {
+	        		if(this.value !== "") {
+	        			label.style.display = "none";
+	        		} else {
+	        			label.style.display = "block";
+	        		}
+	        	}
+	        	//当被卷曲的高度到达300的时候，search显示，并且nav的背景变为白色
+	        	window.onscroll = function () {
+	        		if(scroll().top > 300) {
+	        			search.style.display = "block";
+	        			nav.style.backgroundColor = "#fff";
+	        			nav.style.borderBottom = "1px solid #ccc";
+	        			huaban.style.color = "#000";
+	        			but1.style.color = "#000";
+	        			for (var i=0;i<aArr.length; i++) {
+	        				aArr[i].style.color = "#000";
+	        			}
+
+	        		} else {
+	        			search.style.display = "none";
+	        			nav.style.backgroundColor = "";
+	        			nav.style.borderBottom = "";
+	        			nav.style.color = "#fff";
+	        			but1.style.color = "#fff";
+	        			for (var i=0;i<aArr.length; i++) {
+	        				aArr[i].style.color = "#fff";
+	        			}
+	        			huaban.style.color = "#fff";
+	        		}
+	        	}
+	        }
+        </script>
+    </head>
+    <body>
+    	<!-- 最上面图片部分 -->
+    	<div class="box">
+    		<!-- 导航部分 -->
+    		<div class="nav">
+    			<div class="nav-con fl">
+    				<div class="nav-t fl">
+    					<img src="images/huaban.png" height="25" alt="">
+    					花瓣
+    				</div>
+    				<ul class="fl">
+    					<li><a href="#"><span class="underline">首页</span></a></li>
+    					<li><a href="#"><span class="underline">发现</span></a></li>
+    					<li><a href="#"><span class="underline">最新</span></a></li>
+    					<li class="_li"><a href="#"><span class="underline">活动</span></a></li>
+    					<li><a href="#"><span class="underline">美思</span></a></li>
+    					<li class="new"><a href="#"><span class="underline">美素</span></a></li>
+    					<li><a href="#"><span class="underline">花瓣live</span></a></li>
+    					<li><a href="#"><span class="underline">..</span>.</a></li>
+    				</ul>
+    			</div>
+    			<div class="nav-search">
+    				<label for="inp">搜索你想要的</label>
+    				<input type="text" class="nav-search-inp" id="inp"> 
+    			</div>
+    			<div class="nav-login fr">
+    				<input type="button" value="注册">
+    				<input type="button" value="登陆">
+    			</div>
+    		</div>
+    		<!-- 标题部分 -->
+    		<div class="title">
+    			花瓣，陪你做生活的设计师
+    		</div>
+   			<div class="ti">
+   				<input type="text" value="搜索你喜欢的">
+   			</div>
+   			<div class="word">
+   				<p>热门搜索：<a href="#">花瓣认证设计师</a>，<a href="#">原创插画</a>，<a href="#">花瓣LIVE</a>，<a href="#">配色</a>，<a href="#">壁纸那些事</a></p>
+   			</div>
+    	</div>
+    	<!-- 中间介绍部分 -->
+    	<div class="intro">
+    		<div class="intro-left fl"></div>
+    		<div class="intro-name fl">大家正在关注</div>
+    		<div class="intro-right fl"></div>
+    	</div>
+		<!-- 大家都在关注部分 -->
+    	<div class="concen">
+    		<img src="images/concen.jpg" alt="">
+    		<img src="images/concen2.png" >
+    		<img src="images/concen3.jpg" height="340" width="472" alt="">
+    		<img src="images/concen4.jpg" height="340" width="472" alt="">
+    	</div>
+    	<!-- 推荐标题 -->
+    	<div class="intro">
+    		<div class="intro-left fl"></div>
+    		<div class="intro-name fl">为您推荐</div>
+    		<div class="intro-right fl"></div>
+    	</div>
+    	<!-- 推荐内容 -->
+    	<div class="give">
+    		<a href="#" class="give-pic1 fl"></a>
+    		<div class="give-word1 fl" >
+    			<div class="give-word1-con1">
+    				<p class="grade1">画板</p>
+    				<a href="#" class="grade2">【古典入门】</a>
+    				<p class="grade3">348采集 3900粉丝</p>
+    				<p class="grade4">来自 <span>明仇</span></p>
+    			</div>
+    			<div class="give-word1-con2">
+    				<p class="grade1">画板</p>
+    				<a href="#" class="grade2">Graphic / LOGO / Visual</a>
+    				<p class="grade3">348采集 3900粉丝</p>
+    				<p class="grade4">来自 <span>DantE-htj</span></p>
+    			</div>
+    		</div>
+    		<a href="#" class="give-pic2 fl"></a>
+    		<a href="#" class="give-pic3 fl"></a>
+    		<!-- 第二个的介绍 -->
+    		<div class="give-word3 fl" >
+    				<p class="grade1">兴趣</p>
+    				<a href="#" class="grade2">那些好看的花砖</a>
+    		</div>
+    		<!-- 第三个介绍 -->
+    		<div class="give-word4 fl" >
+    				<p class="grade1">兴趣</p>
+    				<a href="#" class="grade2">夜景手机壁纸</a>
+    		</div>
+    		<a href="#" class="give-pic4 fl"></a>
+    		<a href="#" class="give-pic5 fl" ></a>
+    		<!-- 第四个介绍 -->
+    		<div class="give-word1 fl" >
+    			<div class="give-word1-con1">
+    				<p class="grade1">兴趣</p>
+    				<a href="#" class="grade2">井盖艺术</a>
+    			</div>
+    			<div class="give-word1-con2">
+    				<p class="grade1">兴趣</p>
+    				<a href="#" class="grade2">晚安图</a>
+    			</div>
+    		</div>
+    		<a href="#" class="give-pic6 fl" ></a>
+    	</div>
+    	<!-- 加载更多 -->
+    	<div class="load">
+    		<div class="load-left fl"></div>
+    		<div class="load-min fl">加载更多...</div>
+    		<div class="load-right fl"></div>
+    	</div>
+    	<!-- 列表部分 -->
+    	<div class="list">
+    		<div class="head">
+    			<div class="head-left fl">以分类浏览花瓣</div>
+    			<div class="head-right fr">所有采集&lt;&lt;</div>
+    		</div>
+    		<div class="con">
+    			<ul class="fl">
+    				<li><a href="#">UI/UX</a></li>
+    				<li><a href="#">平面</a></li>
+    				<li><a href="#">插画/漫画</a></li>
+    				<li><a href="#">家居/家装</a></li>
+    				<li><a href="#">女装/搭配</a></li>
+    				<li><a href="#">男士/风尚</a></li>
+    				<li><a href="#">婚礼</a></li>
+    			</ul>
+    			<ul class="fl">
+    				<li><a href="#">工业设计</a></li>
+    				<li><a href="#">摄影</a></li>
+    				<li><a href="#">造型/美妆</a></li>
+    				<li><a href="#">美食</a></li>
+    				<li><a href="#">旅行</a></li>
+    				<li><a href="#">手工/布艺</a></li>
+    				<li><a href="#">健身/舞蹈</a></li>
+    			</ul>
+    			<ul class="fl">
+    				<li><a href="#">儿童</a></li>
+    				<li><a href="#">宠物</a></li>
+    				<li><a href="#">美图</a></li>
+    				<li><a href="#">明星</a></li>
+    				<li><a href="#">美女</a></li>
+    				<li><a href="#">礼物</a></li>
+    				<li><a href="#">极客</a></li>
+    			</ul>
+    			<ul class="fl">
+    				<li><a href="#">动漫</a></li>
+    				<li><a href="#">建筑设计</a></li>
+    				<li><a href="#">人文艺术</a></li>
+    				<li><a href="#">数据图</a></li>
+    				<li><a href="#">游戏</a></li>
+    				<li><a href="#">汽车/摩托</a></li>
+    				<li><a href="#">电影/图书</a></li>
+    			</ul>
+    			<ul class="fl">
+    				<li><a href="#">生活百科</a></li>
+    				<li><a href="#">教育</a></li>
+    				<li><a href="#">运动</a></li>
+    				<li><a href="#">搞笑</a></li>
+    			</ul>
+    		</div>
+    	</div>
+    	<!-- 脚部 -->
+		<div class="footer">
+			<div class="left">
+				<dl class="fl">
+					<dt>花瓣首页</dt>
+					<dd>花瓣采集工具</dd>
+					<dd>花瓣官方微博</dd>
+				</dl>
+				<dl class="fl">
+					<dt>联系与合作</dt>
+					<dd>联系我们</dd>
+					<dd>用户反馈</dd>
+					<dd>花瓣logo文档</dd>
+				</dl>
+				<dl class="fl">
+					<dt>移动客户端</dt>
+					<dd>花瓣iphone版</dd>
+					<dd>花瓣android版</dd>
+					<dd>花瓣HD版</dd>
+				</dl>
+			</div>
+			<div class="right fr">
+				<p class="right-con1">关注我们</p>
+				<p class="right-con2">新浪微博：@花瓣网</p>
+				<p class="right-con2">联系客服：在线客服</p>
+				<p class="right-con2">官方微信: <img src="images/erweima.png" height="18" width="18" alt=""></p>
+			</div>
+		</div>
+		<!-- 底部 -->
+		<div class="bottom">
+			<ul>
+				<li class="b1">© Huaban 杭州纬聚网络有限公司</li>
+				<li><a href="#">浙公网安备 33010602001878号</a></li>
+			</ul>
+		</div>
+    </body>
+</html>

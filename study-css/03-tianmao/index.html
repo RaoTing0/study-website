@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	/* 初始化 */
+			body,ul,li{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background-color: #F5F5F5;
+			}
+			img,input{
+				border: 0 none;
+			}
+			input{
+				outline-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			ul li{
+				list-style: none;
+			}
+			/* 公用样式 */
+			.fl{
+				float: left;
+			}
+			.fr{
+				float: right;
+			}
+			/* 顶部双十一大图 */
+			.s11{
+				height: 80px;
+			}
+			/* 顶部导航栏 */
+			.hnav{
+				height: 33px;
+				background-color: #F2F2F2;
+				border-bottom: 1px solid #E5E5E5;
+			}
+			.hnav-con{
+				width: 1300px;
+				height: 23px;
+				margin: 0 auto;
+				font-size: 12px;
+				line-height: 33px;
+				padding-top: 10px;
+			}
+			.hnav-con ul li{
+				float: left;
+				padding: 0 10px;
+				height: 12px;
+				line-height: 12px;
+			}
+			.hnav-left{
+				height: 33px ;
+				width: 300px;
+			}
+			.hnav-right{
+				height: 33px ;
+				width: 550px;
+			}
+			.hnav-con ul li a{
+				color: #999;
+			}
+			.hnav-con ul li a:hover{
+				color: #aa0000;
+				text-decoration: underline;
+			}
+			.hnav-con ul .r-li{
+				border-right: 1px solid #E5E5E5;
+			}
+			/* 搜索栏部分样式 */
+			.sear{
+				height: 130px;
+				background-color: #fff;
+				width: 1534px;
+				background: url("images/dongtu.gif") no-repeat 120px;
+				background-color: #fff;
+			}
+			.sear .sear-b{
+				height: 130px;
+				width: 595px;
+				margin: 0 auto;
+			}
+			.sear .search{
+				height: 40px;
+				width: 595px;
+			}
+			.sear .sear-b input[type="text"]{
+				height: 35px;
+				width: 450px;
+				border: 1px solid #FF0036;
+				border-bottom: 2px solid #FF0036;
+				padding-right: 10px;
+				margin-top: 35px;
+			}
+			.sear .sear-b input[type="button"]{
+				height: 40px;
+				width: 130px;
+				background-color: #FF0036;
+				font-size: 18px;
+				color: #fff;
+				margin-top: 35px;
+			}
+			.sear .sear-b ul{
+				margin-top: 7px;
+			}
+			.sear .sear-b ul li{
+				float: left;
+				padding: 0px 10px;
+				border-right: 1px solid #999999;
+			}
+			.sear .sear-b ul li a{
+				font-size: 13px;
+				color: #999;
+			}
+			.sear .sear-b ul li .a-red{
+				color: #FF0036;
+			}
+			.sear .sear-b ul li .milk{
+				border: none;
+			}
+			/* 大导航栏部分样式开始 */
+			.nav{
+				height: 490px;
+				background-color: #fff;
+			}
+			.nav .nav-con{
+				height: 37px;
+				width: 1275px;
+				margin: 0 auto;
+			}
+			.pic1,.pic2,.pic3{
+				height: 37px ;
+				width: 123px;
+			}
+			.nav .nav-con .pic1{
+				background-color: #FF0036;
+				line-height: 37px;
+				text-align: center;
+				font-weight: 700;
+				color: #fff;
+				width: 211px;
+			}
+			.nav .nav-con img{
+				margin-left: 5px;
+			}
+			.nav .nav-con ul li{
+				float: left;
+				padding: 0 9px;
+				height: 37px;
+				line-height: 37px;
+			}
+			.nav .nav-con ul li a{
+				color: #000;
+			}
+			.nav .nav-con ul li a:hover{
+				color: #FF0036;
+			}
+			.nav .nav-b{
+				height: 450px;
+				background: url("images/jiangzhong.jpg") -30px -20px;
+			}
+			.nav .nav-b .nav-list{
+				height: 450px;
+				width: 190px;
+				opacity: 0.7;
+				margin-left: 123px;
+			}
+			.nav .nav-b .nav-list ul li{
+				height: 30px;
+				line-height: 30px;
+			}
+			.nav .nav-b .nav-list ul li a{
+				display: inline-block;
+				width: 190px;
+				height: 30px;
+				background-color: #000;
+				color: #fff;
+				padding: 0 10px;
+				line-height: 30px;
+				font-size: 14px;
+			}
+			.nav .nav-b .nav-list ul li a:hover{
+				color: #000;
+				background-color: #fff;
+				opacity: 1;
+			}
+			/* 中间的广告部分样式 */
+			.min{
+				height: 370px;
+				width: 1200px;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+			.pinpai{
+				height: 360px;
+				width: 230px;
+			}
+			.tehui,.jiadian{
+				height: 360px;
+				width: 475px;
+				margin-left: 10px;
+			}
+			.min .min-title,.min .min-title1{
+				background-color: #fff;
+				height: 54px;
+				line-height: 54px;
+				padding-right: 10px;
+				font-size: 18px;
+				font-weight: 700;
+			}
+			.min span{
+				font-size: 16px;
+			}
+			.min .min-title-r{
+				font-size: 16px;
+				font-weight: 400;
+				color: #666;
+			}
+			.min .min-title{
+				width: 465px;
+			}
+			.min .min-title1{
+				width: 220px;
+			}
+			.min a{
+				display: inline-block;
+			}
+			.min a:hover{
+				opacity: 0.8;
+			}
+			.banner{
+				height: 70px;
+				width: 1200px;
+				margin: 20px auto;
+			}
+			/* 天猫超市样式 */
+			.mar{
+				height: 650px;
+				width: 1200px;
+				margin: 20px auto;
+			}
+			.mar .mar-nav{
+				height: 32px;
+				width: 1200px;
+			}
+			.mar .mar-nav ul li{
+				float: left;
+				height: 32px;
+				padding: 0 10px;
+				line-height: 32px;
+			}
+			.mar .mar-nav ul li a{
+				color: #000;
+				font-size: 14px;
+				display: inline-block;
+				height: 32px;
+				line-height: 32px;
+			}
+			.mar .mar-nav ul li a span{
+				display: inline-block;
+				height: 27px;
+			}
+			.mar .mar-nav ul li a span:hover{
+				border-bottom: 1px solid #000;
+			}
+			.mar-con{
+				width: 1200px;
+				height: 618px;
+			}
+			.mar-con .mar-con-left{
+				height: 618px;
+				width: 235px;
+				
+			}
+			.mar-con .mar-con-right{
+				width: 955px;
+				height: 618px;
+			}
+			.mar-con .mar-con-right .Bcon{
+				height: 302px;
+				width: 466px;
+				margin-left: 10px;
+			}
+			/* 商品部分样式 */
+			.mar-con .mar-con-right .con,.like-con .like-con-pic{
+				height: 302px;
+				width: 226px;
+				margin-left: 10px;
+			}
+			.mar-con .mar-con-right .con2{
+				margin-top: 10px;
+			}
+			.mar-con .mar-con-right .Bcon .B-title{
+				width: 466px;
+				height: 46px;
+			}
+			.mar-con .mar-con-right .Bcon .B-title-1,.mar-con .mar-con-right .Bcon .B-title-2{
+				height: 46px;
+				width: 233px;
+			}
+			.mar-con .mar-con-right .Bcon a{
+				display: inline-block;
+				height: 46px;
+				width: 233px;
+				background-color: #eee;
+				font-size: 18px;
+				line-height: 46px;
+				color: #000;
+				text-align: center;
+			}
+			.mar-con .mar-con-right .Bcon a:hover{
+				color: #fff;
+				background-color: #00B262;
+			}
+			.mar-con .mar-con-right .B-con,.mar-con .mar-con-right .B-con-pic1,.mar-con .mar-con-right .B-con-pic2{
+				height: 256px;
+				width: 466px;
+			}
+			.mar-con .mar-con-right .B-con{
+				overflow: hidden;
+			}
+			.mar-con .mar-con-right .con a,.like-con .like-con-pic a{
+				display: inline-block;
+				height: 302px;
+				width: 226px;
+				text-align: center;
+				background-color: #fff;
+				color: #000;
+				font-size: 14px;
+				line-height: 1.5;
+			}
+			.mar-con .mar-con-right .con a span,.like-con .like-con-pic a span{
+				color: #ff0000;
+				line-height: 2;
+				font-size: 16px;
+				font-weight: 700;
+			}
+			.mar-con .mar-con-right .con a:hover,.like-con .like-con-pic a:hover{
+				border: 1px solid #ff0000;
+				opacity: 0.8;
+			}
+			.like{
+				height: 30px;
+				width: 200px;
+				margin: 30px auto;
+				margin-bottom: 20px;
+			}
+			.like-left,.like-right{
+				height: 15px;
+				margin-top: 15px;
+				width: 25px;
+				border-top: 1px solid #979797;
+			}
+			.like-min{
+				width: 90px;
+				height: 30px;
+				padding-left: 50px;
+				line-height: 30px;
+				background: url("images/like.jpg") no-repeat 10px 5px;
+				font-size: 18px;
+				color: #979797;
+			}
+			.like-con{
+				width: 1200px;
+				height: 630px;
+				margin: 0 auto;
+			}
+			.like-con-pic{
+				float: left;
+				margin-top: 10px;
+			}
+			.end{
+				height: 40px;
+				width: 70px;
+				margin: 15px auto;
+				margin-bottom: 10px;
+			}
+			/* logo部分样式 */
+			.logo{
+				width: 1200px;
+				height: 220px;
+				margin: 20px auto;
+				
+			}
+			.logo .logo-con{
+				width: 118px;
+				height: 108px;
+				margin: 1px;
+				float: left;
+				background-color: #fff;
+				position: relative;
+			}
+			.logo .logo-con img{
+				margin-top: 50px;
+				margin-left: 2px;
+				float: left;
+			}
+			.logo .logo-con .logo-con-son{
+				width: 100%;
+				height: 100%;
+				background-color: #000;
+				float: left;
+				position: absolute;
+				display: none;
+				color: #fff;
+			}
+			.logo-con:hover .logo-con-son{
+				display: block;
+				opacity: 0.8;
+			}
+			.logo-con .logo-con-son p{
+				margin-top: 40px;
+				text-align: center;
+				font-size: 14px;
+				line-height: 1.5;
+			}
+			/* 脚部样式 */
+			.footer{
+				height: 370px;
+				background-color: #fff;
+				border-bottom: 2px solid #FF0036;
+				margin-bottom: 0;
+			}
+			.footer .footer-t{
+				width: 1160px;
+				height: 150px;
+				margin: 0 auto;
+				border-bottom: 1px solid #EDEDED;
+			}
+			.footer-t-pic1,.footer-t-pic2,.footer-t-pic3,.footer-t-pic4{
+				height: 95px;
+				width: 270px;
+				margin-top: 30px;
+				padding-left: 20px;
+				float: left;
+			}
+			.footer .footer-t img{
+				margin: 20px; 
+			}
+			.footer .footer-t p{
+				font-weight: 700;
+				font-size: 18px;
+				line-height: 1.5;
+				color: #3C3C3C;
+			}
+			.footer .footer-t p span{
+				font-size: 16px;
+				font-weight: 400;
+				color: #B3B3B3;
+			}
+			.footer .footer-b{
+				height: 120px;
+				width: 1160px;
+				margin: 0 auto;
+
+			}
+			.footer-b dl{
+				height: 150px;
+				width: 190px;
+				margin-top: 30px;
+				padding-left: 40px;
+			}
+			.footer-b dl dt{
+				font-weight: 700;
+				height: 30px;
+				color: #646464;
+			}
+			.footer-b dl dd{
+				padding: 0;
+				margin: 0;
+				font-size: 12px;
+				height: 20px;
+				color: #8B8B8B;
+			}
+			.footer-b dl dd .erweima{
+				height: 90px;
+				width: 90px;
+			}
+			/* 底部样式 */
+			.bottom{
+				height: 200px;
+				background-color: #000;
+				color: #fff;
+			}
+			.bottom .bottom-con{
+				width: 1200px;
+				margin: 0 auto;
+				height: 150px;
+			}
+			.bottom .bottom-con ul li{
+				float: left;
+				font-size: 12px;
+				margin: 10px 5px;
+			}
+			.bottom .bottom-con p{
+				margin-top: 5px;
+				font-size: 12px;
+				line-height: 1;
+				color: #A4A4A4;
+			}
+			.bottom .bottom-con p img{
+				margin-top: 5px;
+				vertical-align: bottom;
+			}
+			.bottom .bottom-con p span{
+				height: 20px;
+				margin-top: 3px;
+				line-height: 2;
+				color: #686868;
+			}
+			img[src="images/b1.PNG"]{
+				margin: 0 10px 10px 160px;
+			}
+        </style>
+    </head>
+    <body>
+    	<!-- 顶部双十一大图 -->
+    	<div class="s11">
+    		<img src="images/s11.png" height="80">
+    	</div>
+    	<!-- 顶部导航栏 -->
+    	<div class="hnav">
+    		<div class="hnav-con">
+    			<div class="hnav-left fl">
+    				<ul>
+    					<li><a href="#">喵，欢迎来天猫</a></li>
+    					<li><a href="#">请登录</a></li>
+    					<li><a href="#">免费注册</a></li>
+    				</ul>
+    			</div>
+    			<div class="hnav-right fr">
+    				<ul>
+    					<li><a href="#">我的淘宝</a></li>
+    					<li><a href="#"> 我关注的品牌</a></li>
+    					<li><a href="#">购物车0件</a></li>
+    					<li class="r-li"><a href="#">收藏夹</a></li>
+    					<li><a href="#">手机版</a></li>
+    					<li><a href="#">淘宝网</a></li>
+    					<li><a href="#">商家支持</a></li>
+    					<li><a href="#">网站导航</a></li>
+    				</ul>
+    			</div>
+    		</div>
+    	</div>
+    	<!-- 搜索栏部分 -->
+    	<div class="sear">
+ 			<div class="sear-b ">
+    			<div class="search">
+	    			<input type="text" value="&nbsp;洗出洁净新世界" class="fl">
+	    			<input type="button" value="搜&nbsp;索" class="fl">
+	    		</div>
+    			<ul>
+    				<li><a href="#" class="a-red">牛仔裤</a></li>
+    				<li><a href="#">外套</a></li>
+    				<li><a href="#">四件套</a></li>
+    				<li><a href="#" class="a-red">天猫精灵</a></li>
+    				<li><a href="#">客厅灯</a></li>
+    				<li><a href="#">保湿水</a></li>
+    				<li><a href="#" class="a-red">大闸蟹</a></li>
+    				<li><a href="#">小白鞋</a></li>
+    				<li><a href="#" class="a-red milk">牛奶</a></li>
+    			</ul>
+    		</div>
+    	</div>
+    	<!-- 大导航栏部分 -->
+    	<div class="nav">
+    		<div class="nav-con">
+    			<div class="pic1 fl">商品分类</div>
+    			<div class="pic2 fl">
+    				<img src="images/chaoshi.png" height="30" >
+    			</div>
+    			<div class="pic3 fl">
+    				<img src="images/guoji.png" height="30">
+    			</div>
+    			<ul>
+    				<li><a href="#">天猫会员</a></li>
+    				<li><a href="#">电器城</a></li>
+    				<li><a href="#">喵鲜生</a></li>
+    				<li><a href="#">医药馆</a></li>
+    				<li><a href="#">营业厅</a></li>
+    				<li><a href="#">魅力惠</a></li>
+    				<li><a href="#">飞猪旅行</a></li>
+    				<li><a href="#">苏宁易购</a></li>
+    			</ul>
+    		</div>
+    		<div class="nav-b">
+    			<div class="nav-list">
+    				<ul>
+    					<li><a href="#">女装 /内衣</a></li>
+    					<li><a href="#">男装 /运动户外</a></li>
+    					<li><a href="#">女鞋 /男鞋 /箱包</a></li>
+    					<li><a href="#">美妆 /个人护理</a></li>
+    					<li><a href="#">腕表 /眼镜 /珠宝饰品</a></li>
+    					<li><a href="#">手机 /数码 /电脑办公</a></li>
+    					<li><a href="#">母婴玩具</a></li>
+    					<li><a href="#">零食 /茶酒 /进口食品</a></li>
+    					<li><a href="#">生鲜水果</a></li>
+    					<li><a href="#">大家电 /生活电器</a></li>
+    					<li><a href="#"> 家具建材</a></li>
+    					<li><a href="#">汽车 /配件 /用品</a></li>
+    					<li><a href="#">家纺 /家饰 /鲜花</a></li>
+    					<li><a href="#">医药保健</a></li>
+    					<li><a href="#">厨具 /收纳 /宠物</a></li>
+    				</ul>
+    			</div>
+    		</div>
+    	</div>
+    	<!-- 中间的广告部分 -->
+    	<div class="min">
+    		<div class="pinpai fl">
+    			<div class="min-title1">
+    				<div class="min-title-l fl">品牌闪购<span>BRAND SALE</span></div>
+    				<div class="min-title-r fr">更</div>
+    			</div>
+    			<a href="#"><img src="images/pinpai.jpg_.webp" width="230" alt=""></a>
+    		</div>
+    		<div class="tehui fl">
+    			<div class="min-title">
+    				<div class="min-title-l fl">聚名品<span>LUXURY CHANNEL</span></div>
+					<div class="min-title-r fr">更多&lt;&lt;</div>
+    			</div>
+    			<a href="#"><img src="images/tehui.jpg_.webp" height="316" alt=""></a>
+    		</div>
+    		<div class="jiadian fl">
+    			<div class="min-title">
+    				<div class="min-title-l fl">品牌活动<span>BRAND ACTIVITY</span></div>
+					<div class="min-title-r fr">更多&lt;&lt;</div>
+    			</div>
+    			<a href="#"><img src="images/jiadian.jpg_.webp" height="316" alt=""></a>
+    		</div>
+    	</div>
+    	<!-- ligo部分 -->
+    	<div class="logo">
+    		<div class="logo-con">
+    			<img src="images/logo1.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con">
+    			<img src="images/logo2PNG.PNG" width="110" height="20" alt="">
+				<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo3.PNG" width="110" height="20" alt="">
+				<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo4.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo5.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo1.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo2PNG.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo3.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo4.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo5.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo1.PNG" width="100" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo2PNG.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo3.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo4.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo5.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo1.PNG" width="110" height="20" alt="">
+				<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo2PNG.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo3.PNG" width="110" height="20"  alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo4.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    		<div class="logo-con"><img src="images/logo5.PNG" width="110" height="20" alt="">
+    			<div class="logo-con-son">
+    				<p>关注人数 1342 <br> 点击进入</p>
+    			</div>
+    		</div>
+    	</div>
+
+    	<!-- 广告 -->
+    	<div class="banner">
+    		<img src="images/title.jpg" height="70" width="1200" alt="">
+    	</div>
+
+    	<!-- 天猫超市部分 -->
+    	<div class="mar">
+    		<div class="mar-nav">
+    			<img src="images/Bmarket.png" width="225" class="fl">
+    			<ul class="fr">
+    				<li><a href="#"><span>进口食品</span></a></li>
+    				<li><a href="#"><span>食品饮料</span></a></li>
+    				<li><a href="#"><span>粮油副食</span></a></li>
+    				<li><a href="#"><span>美容洗护</span></a></li>
+    				<li><a href="#"><span>家居家电</span></a></li>
+    				<li><a href="#"><span>家庭清洁</span></a></li>
+    				<li><a href="#"><span>母婴用品</span></a></li>
+    				<li><a href="#"><span>生鲜水果</span></a></li>
+    			</ul>
+    		</div>
+    		<div class="mar-con">
+    			<div class="mar-con-left fl">
+    				<img src="images/quduoduo.jpg" height="618"  alt="">
+    			</div>
+    			<div class="mar-con-right fl">
+    				<!-- 今日疯抢部分 -->
+    				<div class="Bcon fl">
+    					<div class="B-title">
+    						<div class="B-title-1 fl">
+    							<a href="#pic1">今日疯抢</a>
+    						</div>
+    						<div class="B-title-2 fl">
+    							<a href="#pic2">量贩装</a>
+    						</div>
+    					</div>
+    					<div class="B-con">
+    						<div class="B-con-pic1" id="pic1">
+    							<img src="images/feng.png" height="256" width="466" alt="">
+    						</div>
+    						<div class="B-con-pic2" id="pic2">
+    							<img src="images/hui.png" height="256" width="466" alt="">
+    						</div>
+    					</div>
+    				</div>
+    				<!-- 一般用品部分 -->
+    				<div class="con fl">
+    					<a href="#">
+    						<img src="images/kele.jpg" height="215" width="215" alt="">
+    						金龙鱼 盘锦大米 蟹岛<br>共生5kg 东北大米 人<br><span>&yen;28.5</span>
+    					</a>
+    				</div>
+    				<div class="con fl">
+    					<a href="#">
+    						<img src="images/mian.jpg" height="215" alt="">
+    						金龙鱼 盘锦大米 蟹岛<br>共生5kg 东北大米 人<br><span>&yen;28.5</span>
+    					</a>
+    				</div>
+    				<div class="con fl con2">
+    					<a href="#">
+    						<img src="images/qidu.jpg" height="215"  alt="">
+    						金龙鱼 盘锦大米 蟹岛<br>共生5kg 东北大米 人<br><span>&yen;28.5</span>
+    					</a>
+    				</div>
+    				<div class="con fl con2">
+    					<a href="#">
+    						<img src="images/yaqian.jpg" height="215"  alt="">
+    						金龙鱼 盘锦大米 蟹岛<br>共生5kg 东北大米 人<br><span>&yen;28.5</span>
+    					</a>
+    				</div>
+    				<div class="con fl con2">
+    					<a href="#">
+    						<img src="images/zhi.jpg" height="215" alt="">
+    						金龙鱼 盘锦大米 蟹岛<br>共生5kg 东北大米 人<br><span>&yen;28.5</span>
+    					</a>
+    				</div>
+    				<div class="con fl con2">
+    					<a href="#">
+    						<img src="images/yumi.jpg" height="215" alt="">
+    						金龙鱼 盘锦大米 蟹岛<br>共生5kg 东北大米 人<br><span>&yen;28.5</span>
+    					</a>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	<!-- 猜你喜欢部分 -->
+    	<div class="like">
+    		<div class="like-left fl"></div>
+    		<div class="like-min fl">猜你喜欢</div>
+    		<div class="like-right fl"></div>
+    	</div>
+    	<!-- 猜你喜欢的内容 -->
+    	<div class="like-con">
+    		<div class="like-con-pic">
+    			<a href="#">
+	    			<img src="images/phone.jpg" height="215" alt="">
+	    			【十二期免息】vivo <br> x20全面屏手机<br><span>&yen;2899.0</span>
+    			</a>
+    		</div>
+    		<div class="like-con-pic">
+    			<a href="#">
+	    			<img src="images/pic2.jpg" height="215" alt="">
+	    			【十二期免息】vivo <br> x20全面屏手机<br><span>&yen;2899.0</span>
+    			</a>
+    		</div>
+    		<div class="like-con-pic">
+    			<a href="#">
+	    			<img src="images/pic3.jpg" height="215" alt="">
+	    			【十二期免息】vivo <br> x20全面屏手机<br><span>&yen;2899.0</span>
+    			</a>
+    		</div>
+    		<div class="like-con-pic">
+    			<a href="#">
+	    			<img src="images/pic4.jpg" height="215" alt="">
+	    			【十二期免息】vivo <br> x20全面屏手机<br><span>&yen;2899.0</span>
+    			</a>
+    		</div>
+    		<div class="like-con-pic">
+    			<a href="#">
+	    			<img src="images/pic5.jpg" height="215" alt="">
+	    			【十二期免息】vivo <br> x20全面屏手机<br><span>&yen;2899.0</span>
+    			</a>
+    		</div>
+    		<div class="like-con-pic">
+    			<a href="#">
+	    			<img src="images/phone.jpg" height="215" alt="">
+	    			【十二期免息】vivo <br> x20全面屏手机<br><span>&yen;2899.0</span>
+    			</a>
+    		</div>
+    		<div class="like-con-pic">
+    			<a href="#">
+	    			<img src="images/pic2.jpg" height="215" alt="">
+	    			【十二期免息】vivo <br> x20全面屏手机<br><span>&yen;2899.0</span>
+    			</a>
+    		</div>
+    		<div class="like-con-pic">
+    			<a href="#">
+	    			<img src="images/pic3.jpg" height="215" alt="">
+	    			【十二期免息】vivo <br> x20全面屏手机<br><span>&yen;2899.0</span>
+    			</a>
+    		</div>
+    		<div class="like-con-pic">
+    			<a href="#">
+	    			<img src="images/pic4.jpg" height="215" alt="">
+	    			【十二期免息】vivo <br> x20全面屏手机<br><span>&yen;2899.0</span>
+    			</a>
+    		</div>
+    		<div class="like-con-pic">
+    			<a href="#">
+	    			<img src="images/pic5.jpg" height="215" alt="">
+	    			【十二期免息】vivo <br> x20全面屏手机<br><span>&yen;2899.0</span>
+    			</a>
+    		</div>
+    	</div>
+    	<!-- end -->
+    	<div class="end">
+    		<img src="images/tianmao.png" height="40" width="70" alt="">
+    	</div>
+		<!-- 脚部 -->
+		<div class="footer">
+			<div class="footer-t">
+				<div class="footer-t-pic1">
+					<img src="images/you.PNG" height="45" alt="" class="fl">
+					<p>品质保障<br>
+						<span>品质护航，购物无忧</span>
+					</p>
+				</div>
+				<div class="footer-t-pic2">
+				<img src="images/qi.PNG" height="45" alt="" class="fl">
+					<p>起天无理由退换货<br>
+						<span>品质护航，购物无忧</span>
+					</p>
+				</div>
+				<div class="footer-t-pic3">
+					<img src="images/te.PNG" height="45" alt="" class="fl">
+					<p>特色服务体验<br>
+						<span>为您呈现不一样的服务</span>
+					</p>
+				</div>
+				<div class="footer-t-pic4 fr">
+					<img src="images/bang.PNG" height="45" alt="" class="fl">
+					<p>帮助中心<br>
+						<span>您的购物指南</span>
+					</p>
+				</div>
+			</div>
+			<div class="footer-b">
+				<dl class="fl">
+					<dt>购物指南</dt>
+					<dd>免费注册</dd>
+					<dd>开通支付宝</dd>
+					<dd>支付宝充值</dd>
+				</dl>
+				<dl class="fl">
+					<dt>天猫保障</dt>
+					<dd>发票保障</dd>
+					<dd>售后规则</dd>
+					<dd>缺货赔付</dd>
+				</dl>
+				<dl class="fl">
+					<dt>支付方式</dt>
+					<dd>快捷支付</dd>
+					<dd>信用卡</dd>
+					<dd>余额宝</dd>
+					<dd>蚂蚁花呗</dd>
+					<dd>货到付款</dd>
+				</dl>
+				<dl class="fl">
+					<dt>商家服务</dt>
+					<dd>天猫规则</dd>
+					<dd>商家入驻</dd>
+					<dd>商家中心</dd>
+					<dd>天猫智库</dd>
+					<dd>物流服务</dd>
+					<dd>喵言喵语</dd>
+					<dd>运营服务</dd>
+				</dl>
+				<dl class="fl">
+					<dt>手机天猫</dt>
+					<dd class="erweima">
+						<img src="images/erweima.png" height="90">
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- 底部 -->
+		<div class="bottom">
+			<div class="bottom-con">
+				<ul class="fl">
+					<li>关于天猫</li>
+					<li>帮助中心</li>
+					<li>开放平台</li>
+					<li>诚聘英才</li>
+					<li>联系我们</li>
+					<li>网站合作</li>
+					<li>法律声明及隐私权政策</li>
+					<li>知识产权</li>
+					<li>廉正举报</li>
+					<li>规则意见征集</li>
+				</ul>
+				<br>
+				<ul class="fl">
+					<li>阿里巴巴集团</li>
+					<li>| 淘宝网</li>
+					<li>| 天猫</li>
+					<li>| 聚划算</li>
+					<li>| 全球速卖通</li>
+					<li>| 阿里巴巴国际交易市场</li>
+					<li>| 1688</li>
+					<li>| 阿里妈妈</li>
+					<li>| 飞猪</li>
+					<li>| 阿里云计算</li>
+					<li>| YunOS</li>
+					<li>| 阿里通信</li>
+					<li>| 万网</li>
+					<li>| 高德</li>
+					<li>| UC</li>
+					<li>| 友盟</li>
+					<li>| 虾米</li>
+					<li>| 阿里星球</li>
+					<li>| 来往</li>
+					<li>| 钉钉</li>
+					<li>| 支付宝</li>
+				</ul>
+				<br>
+				<p class="fl">增值电信业务经营许可证： 浙B2-20110446&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;网络文化经营许可证：浙网文[2015]0295-065号 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12318举报
+				<br>互联网药品信息服务资质证书编号：浙-（经营性）-2017-0005  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/gongan.PNG" width="20" alt=""> 浙公网安备 33010002000120号 <br><span>&copy;2003-2017 TMALL.COM 版权所有</span></p>
+				
+			</div>
+			<img src="images/b1.PNG" height="30" alt="" class="fl">
+			<img src="images/b2.PNG" height="30" alt="" class="fl">
+		</div>
+    </body>
+</html>

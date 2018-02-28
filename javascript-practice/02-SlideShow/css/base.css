@@ -1,0 +1,58 @@
+/*
+* @Author: 饶婷
+* @Date:   2017-11-23 14:37:02
+* @Last Modified by:   饶婷
+* @Last Modified time: 2017-11-23 16:18:21
+*/
+	body,ul,li {
+		padding: 0;
+		margin: 0;
+	}
+	.wrap {
+		height: 500px;
+		width: 1200px;
+		margin: 10px auto;
+	}
+	.slide {
+		height: 500px;
+		width: 1200px;
+		/* 用来定位li的 */
+		position: relative;
+		overflow: hidden;
+	}
+	ul {
+		width: 500%;
+	}
+	ul li {
+		list-style: none;
+		float: left;
+		position: absolute;
+	}
+	li img {
+		/* 要想让图片的大小随着li的大小改变，就要给img设置和li一样的宽 继承就可以*/
+		width: 100%;
+	}
+	.arrow {
+		width: 1200px;
+		position: absolute;
+		top: 240px;
+		height: 76px;
+		opacity: 0;
+		z-index: 99;
+	}
+	a {
+		display: inline-block;
+		height: 112px;
+		width: 76px;
+	}
+	.prev {
+		float: left;
+	}
+	.next {
+		float: right;
+	}
+	a img {
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
