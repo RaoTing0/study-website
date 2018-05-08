@@ -16,6 +16,4 @@ const resumeSchema = new Schema({
   user_id: String
 });
 
-console.log("新建一个resume集合");
-
 module.exports = mongoose.model("resumes", resumeSchema);

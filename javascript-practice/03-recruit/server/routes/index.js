@@ -158,6 +158,28 @@ router.get("/getPosition", function(req, res) {
     });
 });
 
+// 获取某个职位信息
+router.get("/getOnePosition", function(req, res) {
+  positions.find({_id: req.query.id}, function(err, doc) {
+    if (err) {
+      throw err;
+    }
+    if (!doc) {
+      return res.json({
+        data: "",
+        status: 403,
+        message: "该职位不存在"
+      });
+    }
+    return res.json({
+      data: doc,
+      status: 200,
+      message: "成功"
+    });
+        
+  })
+})
+
 // 完善简历信息（将用户对应的id放在数据中）
 router.post("/writeResume", function(req, res) {
     const resume = new resumes(req.body);

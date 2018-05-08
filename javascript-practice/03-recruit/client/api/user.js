@@ -16,6 +16,8 @@ export const userResume = data => request('/resume', data);
 
 // 获取所有职位
 export const getAllPosition = data => request('/getPosition', data);
+// 获取某个职位
+export const getOnePosition = data => request('/getOnePosition', data);
 
 // 投递简历
 export const putResume = data => request('/putResume', data);

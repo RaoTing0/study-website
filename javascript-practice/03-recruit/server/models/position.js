@@ -9,9 +9,11 @@ const positionSchema = new Schema({
   duties: String,
   publishDate: Date,
   type: String,
+  salary: String,
+  experience: String,
+  education: String,
+  workType: String,
   resume_ids: Array
 });
-
-console.log("新建一个position集合");
 
 module.exports = mongoose.model("positions", positionSchema);
